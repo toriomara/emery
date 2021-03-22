@@ -25,7 +25,7 @@ const StyledMenu = styled.div`
 export const Menu = () => {
     return (
         <StyledMenu>
-            <MenuItem title='existing inventory'/>
+            <MenuItem title='Корунд Зима'/>
             <MenuItem title='used inventory'/>
             <MenuItem title='trade-in'/>
             <MenuItem title='cybertruck'/>

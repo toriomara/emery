@@ -1,58 +1,117 @@
-import React from 'react';
-import logo from './logo.svg';
-import { Counter } from './features/counter/Counter';
-import './App.css';
+import React, {useEffect} from 'react'
+import {BrowserRouter as Router, Switch, Route, Redirect} from 'react-router-dom'
+import HeaderBlock from './components/HeaderBlock/HeaderBlock'
+import Login from './components/Login/Login'
+import {useDispatch, useSelector} from 'react-redux'
+import {login, logout, selectUser} from './features/userSlice'
+import Signup from './components/Signup/Signup'
+import Account from './components/Account/Account'
+import {auth} from './components/firebase'
+import Production from "./components/Production/Production";
+import Documentation from "./components/Documentation/Documentation";
+import Distribution from "./components/Distribution/Distribution";
+import Contacts from "./components/Contacts/Contacts";
+import News from "./components/News/News";
+import Classic from "./components/Products/Classic";
+import Anticorrosive from "./components/Products/Antikorrosive";
+import Facade from "./components/Products/Facade";
+import Winter from "./components/Products/Winter";
+import GlobalStyle from "./components/globalStyles";
+
+
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <Counter />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <span>
-          <span>Learn </span>
-          <a
-            className="App-link"
-            href="https://reactjs.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux-toolkit.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux Toolkit
-          </a>
-          ,<span> and </span>
-          <a
-            className="App-link"
-            href="https://react-redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React Redux
-          </a>
-        </span>
-      </header>
-    </div>
-  );
+    const user = useSelector(selectUser)
+    const dispatch = useDispatch()
+
+    useEffect(() => {
+        auth.onAuthStateChanged((userAuth) => {
+            if (userAuth) {
+                //User is signed in
+                dispatch(login({
+                    email: userAuth.email,
+                    uid: userAuth.uid,
+                    displayName: userAuth.displayName
+                }))
+            } else {
+                //User is sign out
+                dispatch(logout())
+            }
+        })
+    }, [dispatch])
+    return (
+        <div>
+            <GlobalStyle/>
+            <Router>
+                <div className='App'>
+                    <Switch>
+
+                        <Route exact path='/'>
+                            {!user ? (
+                                <Redirect to='login'/>
+                            ) : (
+                                <HeaderBlock/>
+                            )}
+                        </Route>
+
+                        <Route path='/login'>
+                            {user ? <Redirect to='account'/> : <Login/>}
+                        </Route>
+
+                        <Route path='/signup'>
+                            <Signup/>
+                        </Route>
+
+                        <Route path='/account' component={Account}>
+                            {!user ? (
+                                <Redirect to='login'/>
+                            ) : (
+                                    <Account/>
+                            )}
+                        </Route>
+
+                        <Route path='/production'>
+                            <Production/>
+                        </Route>
+
+                        <Route path='/documentation'>
+                            <Documentation/>
+                        </Route>
+
+                        <Route path='/distribution'>
+                            <Distribution/>
+                        </Route>
+
+                        <Route path='/news'>
+                            <News/>
+                        </Route>
+
+                        <Route path='/contacts'>
+                            <Contacts/>
+                        </Route>
+
+                        <Route path='/classic' component={Classic}>
+                            <Classic/>
+                        </Route>
+
+                        <Route path='/winter' component={Winter}>
+                            <Winter/>
+                        </Route>
+
+                        <Route path='/anticorrosive' component={Anticorrosive}>
+                            <Anticorrosive/>
+                        </Route>
+
+                        <Route path='/facade' component={Facade}>
+                            <Facade/>
+                        </Route>
+
+                    </Switch>
+                </div>
+            </Router>
+        </div>
+    )
 }
 
-export default App;
+export default App

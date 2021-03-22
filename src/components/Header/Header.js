@@ -1,101 +1,56 @@
-import React, {useState} from 'react'
-import {Link} from 'react-router-dom'
-import img from '../img/logo.png'
-import styled from "styled-components"
-import {FaBars, FaTimes} from "react-icons/fa"
+import React from 'react'
+import {Link, NavLink} from 'react-router-dom'
+import styled from 'styled-components'
 
-const StyledHeader = styled.section`
-  display: flex;
-  position: sticky;
-  z-index: 2;
-  top: 0;
-  left: 0;
-  right: 0;
-  justify-content: space-between;
+const Wrapper = styled.section`
+  display: grid;
+  position: relative;
   align-items: center;
-  padding: 15px 25px 25px 25px;
-`
-
-const StyledLogo = styled.div`
-  display: flex;
-  background-image: url(${img});
-  background-size: contain;
-  background-repeat: no-repeat;
-  width: 120px;
-  height: 30px;
-  cursor: pointer;
+  margin: 0 auto;
+  padding: 4px 24px 4px 24px;
 `
 
 const StyledMenu = styled.span`
   display: flex;
-  font-size: 1rem;
-  gap: 1.5rem;
-
-  & a {
-    text-decoration: none;
-    text-transform: uppercase;
-    color: black;
-    font-weight: 500;
-  }
-`
-
-const StyledRightMenu = styled.div`
-  display: flex;
-  gap: 1.4rem;
-`
-
-const HiddenMenu = styled.div`
-  display: flex;
-  gap: 1rem;
-  font-size: 1rem;
-  justify-content: space-between;
+  height: 50px;
   align-items: center;
+  justify-content: center;
+  font-size: 17px;
+  gap: 1rem;
+  border-top: 1px solid #d2d2d2;
 
   & a {
-    display: flex;
     text-decoration: none;
-    text-transform: uppercase;
     color: black;
-    font-weight: 500;
-    z-index: 0;
-    position: relative;
+    padding: 1px 20px 5px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+  }
+  
+  & a.active {
+    box-shadow: 0 1px 4px 0 rgb(5 5 5 / 25%);
+    color: red;
+  }
 
-    ${({isMenuOpen}) => isMenuOpen && `
-    visibility: hidden;
-  `}
+  & a:hover {
+    color: red;
   }
 `
 
-const StyledIcon = styled.span`
-  display: block;
-  position: relative;
-  top: 2px;
-`
-
-export const Header = ({isMenuOpen, setIsMenuOpen}) => {
-    const show = () => setIsMenuOpen(!isMenuOpen)
-
+export const Header = () => {
     return (
-        <StyledHeader>
-            <StyledLogo/>
-            <StyledMenu>
-                <Link to='/'>Model S</Link>
-                <Link to='/'>Model 3</Link>
-                <Link to='/'>Model X</Link>
-                <Link to='/'>Model Y</Link>
-                <Link to='/'>Solar Roof</Link>
-                <Link to='/'>Solar Panels</Link>
-            </StyledMenu>
-            <StyledRightMenu>
-                <HiddenMenu isMenuOpen={isMenuOpen}>
-                    <Link to='/'>Shop</Link>
-                    <Link to='/login'>Tesla Account</Link>
-                </HiddenMenu>
-                <StyledIcon onClick={show}>
-                    {isMenuOpen ? <FaTimes/> : <FaBars/>}
-                </StyledIcon>
-            </StyledRightMenu>
-        </StyledHeader>
+        <Wrapper>
+                <StyledMenu>
+                    <NavLink exact to='/'>Главная</NavLink>
+                    <NavLink to='/production'>Продукция</NavLink>
+                    <NavLink to='/documentation'>Документация</NavLink>
+                    <NavLink to='/distribution'>Дистрибьюция</NavLink>
+                    <NavLink to='/news'>Новости</NavLink>
+                    <NavLink to='/contacts'>Контакты</NavLink>
+                    <NavLink to='/account'>Войти</NavLink>
+                    <Link to='/account'>Выйти</Link>
+                </StyledMenu>
+        </Wrapper>
     )
 }
 
