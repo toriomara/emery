@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import {Preheader} from "../Preheader/Preheader";
 import {Menu} from "../Menu/Menu";
 import {Header} from "../Header/Header";
-import {Wrapper} from "../globalStyles";
+import {Container, Wrapper} from "../globalStyles";
 
 const Anticorrosive = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -13,9 +13,9 @@ const Anticorrosive = () => {
             <Preheader isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen}/>
             {isMenuOpen && <Menu/>}
             <Header/>
-            <Wrapper>
+            <Container>
                 <h1>Anticorrosive</h1>
-            </Wrapper>
+            </Container>
         </div>
     )
 }
