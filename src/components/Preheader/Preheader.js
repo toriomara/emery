@@ -1,18 +1,30 @@
-import React from 'react'
+import React, {useState} from 'react'
 import {NavLink} from 'react-router-dom'
 import styled, {keyframes} from 'styled-components'
 import {IoIosArrowDown} from 'react-icons/io'
-import img from "../../img/logo.png";
-import {MdLanguage, MdSearch} from "react-icons/md";
-import {FaBars, FaTimes} from "react-icons/fa";
-import {Wrapper, Container} from "../globalStyles";
+import img from "../../img/logo.png"
+import {MdLanguage, MdSearch} from "react-icons/md"
+import {FaBars, FaTimes} from "react-icons/fa"
+import {ContentContainer} from "../globalStyles"
 
-export const PreheaderContainer = styled.div`
+const Nav = styled.div`
   display: flex;
   align-items: center;
+  font-size: 1.2rem;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+`
+
+export const PreheaderContainer = styled(ContentContainer)`
+  display: flex;
+  position: relative;
+  align-items: center;
   height: 50px;
+  margin: 0 auto;
   justify-content: space-between;
-  ${Container}
+  
+  ${ContentContainer}
 `
 
 const StyledMenu = styled.div`
@@ -47,7 +59,7 @@ const Rotate = styled.span`
   margin-left: 4px;
   top: 3px;
   transform-origin: 50% 40%;
-  
+
   animation: ${rotate} .99s forwards;
 `
 
@@ -101,12 +113,11 @@ const Menu = styled.div`
   z-index: 2;
 `
 
-export const Preheader = ({isMenuOpen, setIsMenuOpen}, {isSearchOpen, setIsSearchOpen}) => {
+export const Preheader = ({isMenuOpen, setIsMenuOpen}) => {
     const show = () => setIsMenuOpen(!isMenuOpen)
-    const showSearch = () => setIsSearchOpen(!isSearchOpen)
 
     return (
-        <Wrapper>
+        <Nav>
             <PreheaderContainer>
                 <StyledMenu>
                     <NavLink to='/'>
@@ -138,8 +149,8 @@ export const Preheader = ({isMenuOpen, setIsMenuOpen}, {isSearchOpen, setIsSearc
                     </NavLink>
                 </StyledMenu>
                 <RightMenu>
-                    <Search onClick={showSearch}>
-                        {isSearchOpen ? '' : <MdSearch/>}
+                    <Search>
+                        <MdSearch/>
                     </Search>
                     <Language>
                         <MdLanguage/>
@@ -150,7 +161,7 @@ export const Preheader = ({isMenuOpen, setIsMenuOpen}, {isSearchOpen, setIsSearc
                     </Menu>
                 </RightMenu>
             </PreheaderContainer>
-        </Wrapper>
+        </Nav>
     )
 }
 

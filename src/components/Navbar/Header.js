@@ -1,15 +1,21 @@
 import React from 'react'
 import {Link, NavLink} from 'react-router-dom'
-import styled from 'styled-components'
-import {PreheaderContainer} from "../Preheader/Preheader";
+import styled, {keyframes} from 'styled-components'
 
-/*const Wrapper = styled.div`
-  display: grid;
-  position: relative;
+const Wrapper = styled.div`
+  display: flex;
+  height: 50px;
+  justify-content: center;
   align-items: center;
-  margin: 0 auto;
-  padding: 4px 24px 4px 24px;
-`*/
+  font-size: 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+
+  @media screen and (max-width: 960px) {
+    display: none;
+  }
+`
 
 const StyledMenu = styled.span`
   display: flex;
@@ -17,7 +23,7 @@ const StyledMenu = styled.span`
   height: 50px;
   align-items: center;
   justify-content: center;
-  font-size: 17px;
+  font-size: 16px;
   gap: 1rem;
   //border-top: 1px solid #d2d2d2;
 
@@ -31,17 +37,17 @@ const StyledMenu = styled.span`
 
   & a.active {
     box-shadow: 0 1px 4px 0 rgb(5 5 5 / 25%);
-    color: red;
+    color: #e20001;
   }
 
   & a:hover {
-    color: red;
+    color: #e20001;
   }
 `
 
 export const Header = () => {
     return (
-        <PreheaderContainer>
+        <Wrapper>
             <StyledMenu>
                 <NavLink exact to='/'>Главная</NavLink>
                 <NavLink to='/production'>Продукция</NavLink>
@@ -52,7 +58,7 @@ export const Header = () => {
                 <NavLink to='/account'>Войти</NavLink>
                 <Link to='/account'>Выйти</Link>
             </StyledMenu>
-        </PreheaderContainer>
+        </Wrapper>
     )
 }
 

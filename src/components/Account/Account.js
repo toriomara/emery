@@ -1,23 +1,20 @@
 import React, {useState} from 'react'
 import styled from 'styled-components'
-import {Link, NavLink, useHistory} from 'react-router-dom'
-import {FaBars, FaTimes} from 'react-icons/fa'
+import {Link, useHistory} from 'react-router-dom'
 import {logout, selectUser} from '../../features/userSlice'
 import {useDispatch, useSelector} from 'react-redux'
 import Car from '../Car/Car'
 import {auth} from '../firebase'
-import {Preheader} from "../Preheader/Preheader"
-import {Header} from '../Header/Header'
-import {Menu} from "../Menu/Menu";
+import Navbar from "../Navbar/Navbar";
+import {ContentContainer} from "../globalStyles";
 
-const StyledAccount = styled.section`
-`
-
-const Info = styled.div`
+const Info = styled(ContentContainer)`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 40px 140px 40px;
+  height: 60px;
+
+  ${ContentContainer}
 `
 
 const Person = styled.div`
@@ -51,8 +48,6 @@ const Account = (/*{isMenuOpen, setIsMenuOpen}*/) => {
     const user = useSelector(selectUser)
     const dispatch = useDispatch()
     const history = useHistory()
-        //const show = () => setIsMenuOpen(!isMenuOpen)
-    const [isMenuOpen, setIsMenuOpen] = useState(false)
 
     const logoutOfApp = () => {
         auth
@@ -64,19 +59,17 @@ const Account = (/*{isMenuOpen, setIsMenuOpen}*/) => {
             .catch((error) => alert(error.message))
     }
     return (
-        <StyledAccount>
-            <Preheader isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen}/>
-            {isMenuOpen && <Menu/>}
-            <Header/>
+        <>
+            <Navbar/>
             <Info>
                 <Person>
                     <h4>{user?.displayName + "'s Tesla"}</h4>
                 </Person>
                 <InnerMenu>
-                    <Link>Home</Link>
-                    <Link>Account</Link>
-                    <Link>History</Link>
-                    <Link onClick={logoutOfApp}>Sign out</Link>
+                    <Link to='/'>Home</Link>
+                    <Link to='/'>Account</Link>
+                    <Link to='/'>History</Link>
+                    <Link to='/' onClick={logoutOfApp}>Sign out</Link>
                 </InnerMenu>
             </Info>
             <Car
@@ -88,7 +81,7 @@ const Account = (/*{isMenuOpen, setIsMenuOpen}*/) => {
                 imgSrc='https://www.tesla.com/tesla_theme/assets/img/mytesla/v3/header-nocar-modelx@2x.jpg?20170815'
                 model='model x'
             />
-        </StyledAccount>
+        </>
     )
 }
 

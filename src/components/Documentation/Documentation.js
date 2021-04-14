@@ -1,26 +1,14 @@
-import React, {useState} from 'react'
-import styled from 'styled-components'
-import {Preheader} from "../Preheader/Preheader";
-import {Menu} from "../Menu/Menu";
-import {Header} from "../Header/Header";
+import React from 'react'
+
+import Navbar from "../Navbar/Navbar"
 
 const Documentation = () => {
-    const [isMenuOpen, setIsMenuOpen] = useState(false)
-    const [isSearchOpen, setIsSearchOpen] = useState(false)
-
     return (
         <div>
-            <Preheader
-                isMenuOpen={isMenuOpen}
-                setIsMenuOpen={setIsMenuOpen}
-                isSearchOpen={isSearchOpen}
-                setIsSearchOpen={setIsSearchOpen}
-            />
-            {isMenuOpen && <Menu/>}
-            <Header/>
+            <Navbar/>
             <h1>Documentation</h1>
         </div>
-    );
-};
+    )
+}
 
 export default Documentation;

@@ -1,14 +1,14 @@
 import React, {useState} from 'react'
 import {PreheaderContainer, TopLogo} from '../Preheader/Preheader'
 import {Link, useHistory} from 'react-router-dom'
-import {ButtonPrimary} from '../ButtonPrimary/ButtonPrimary'
-import {ButtonSecondary} from '../ButtonSecondary/ButtonSecondary'
+import {ButtonPrimary} from '../Buttons/ButtonPrimary'
+import {ButtonSecondary} from '../Buttons/ButtonSecondary'
 import {useDispatch} from 'react-redux'
 import {Info, LoginForm, Name, Password, LoginDivider, LoginLanguage} from '../Login/Login'
 import {auth} from '../firebase'
 import {login} from '../../features/userSlice'
 import {MdLanguage} from "react-icons/md";
-import {Wrapper} from "../globalStyles";
+import {LoginWrapper} from "../Login/Login";
 
 const Signup = () => {
     const [email, setEmail] = useState('')
@@ -43,7 +43,7 @@ const Signup = () => {
     }
 
     return (
-        <Wrapper>
+        <LoginWrapper>
             <PreheaderContainer>
                 <TopLogo/>
                 <LoginLanguage>
@@ -98,7 +98,7 @@ const Signup = () => {
                 <Link to='/login'>
                     <ButtonSecondary name='sign in'>Sign In</ButtonSecondary>
                 </Link> </Info>
-        </Wrapper>
+        </LoginWrapper>
     )
 }
 

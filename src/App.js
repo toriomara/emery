@@ -13,13 +13,11 @@ import Distribution from "./components/Distribution/Distribution";
 import Contacts from "./components/Contacts/Contacts";
 import News from "./components/News/News";
 import Classic from "./components/Products/Classic";
-import Anticorrosive from "./components/Products/Antikorrosive";
+import Anticorrosive from "./components/Products/Anticorrosive";
 import Facade from "./components/Products/Facade";
 import Winter from "./components/Products/Winter";
 import GlobalStyle from "./components/globalStyles";
-
-
-
+import Footer from "./components/Footer/Footer"
 
 function App() {
     const user = useSelector(selectUser)
@@ -41,76 +39,75 @@ function App() {
         })
     }, [dispatch])
     return (
-        <div>
+        <Router>
             <GlobalStyle/>
-            <Router>
-                <div className='App'>
-                    <Switch>
+            <Switch>
 
-                        <Route exact path='/'>
-                            {!user ? (
-                                <Redirect to='login'/>
-                            ) : (
-                                <HeaderBlock/>
-                            )}
-                        </Route>
+                <Route exact path='/'>
+                    {!user ? (
+                        <Redirect to='login'/>
+                    ) : (
+                        <>
+                            <HeaderBlock/>
+                            <Footer/>
+                        </>
+                    )}
+                </Route>
 
-                        <Route path='/login'>
-                            {user ? <Redirect to='account'/> : <Login/>}
-                        </Route>
+                <Route path='/login'>
+                    {user ? <Redirect to='account'/> : <Login/>}
+                </Route>
 
-                        <Route path='/signup'>
-                            <Signup/>
-                        </Route>
+                <Route path='/signup'>
+                    <Signup/>
+                </Route>
 
-                        <Route path='/account' component={Account}>
-                            {!user ? (
-                                <Redirect to='login'/>
-                            ) : (
-                                    <Account/>
-                            )}
-                        </Route>
+                <Route path='/account' component={Account}>
+                    {!user ? (
+                        <Redirect to='login'/>
+                    ) : (
+                        <Account/>
+                    )}
+                </Route>
 
-                        <Route path='/production'>
-                            <Production/>
-                        </Route>
+                <Route path='/production'>
+                    <Production/>
+                </Route>
 
-                        <Route path='/documentation'>
-                            <Documentation/>
-                        </Route>
+                <Route path='/documentation'>
+                    <Documentation/>
+                </Route>
 
-                        <Route path='/distribution'>
-                            <Distribution/>
-                        </Route>
+                <Route path='/distribution'>
+                    <Distribution/>
+                </Route>
 
-                        <Route path='/news'>
-                            <News/>
-                        </Route>
+                <Route path='/news'>
+                    <News/>
+                </Route>
 
-                        <Route path='/contacts'>
-                            <Contacts/>
-                        </Route>
+                <Route path='/contacts'>
+                    <Contacts/>
+                </Route>
 
-                        <Route path='/classic' component={Classic}>
-                            <Classic/>
-                        </Route>
+                <Route path='/classic' component={Classic}>
+                    <Classic/>
+                </Route>
 
-                        <Route path='/winter' component={Winter}>
-                            <Winter/>
-                        </Route>
+                <Route path='/winter' component={Winter}>
+                    <Winter/>
+                </Route>
 
-                        <Route path='/anticorrosive' component={Anticorrosive}>
-                            <Anticorrosive/>
-                        </Route>
+                <Route path='/anticorrosive' component={Anticorrosive}>
+                    <Anticorrosive/>
+                </Route>
 
-                        <Route path='/facade' component={Facade}>
-                            <Facade/>
-                        </Route>
+                <Route path='/facade' component={Facade}>
+                    <Facade/>
+                </Route>
 
-                    </Switch>
-                </div>
-            </Router>
-        </div>
+            </Switch>
+        </Router>
     )
 }
 

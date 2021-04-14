@@ -3,17 +3,39 @@ import styled, {createGlobalStyle} from 'styled-components'
 const GlobalStyle = createGlobalStyle`
 
   * {
-    box-sizing: border-box;
+    $red: #e20001;
+    $black: #191919;
+
     margin: 0;
     padding: 0;
+    outline: 0;
+    border: 0;
+    box-sizing: border-box;
+
     font-family: "Gotham", -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;;
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif
   }
 
+  *:focus {
+    outline: 0;
+  }
+
+  html, body {
+    height: 100%;
+  }
+
+  a {
+    text-decoration: none;
+  }
+  ul {
+    list-style: none;
+  }
+  button {
+    cursor: pointer;
+  }
+  
   code {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
   }
 
   ::-webkit-scrollbar {
@@ -25,30 +47,17 @@ const GlobalStyle = createGlobalStyle`
   }
 
   ::-webkit-scrollbar-thumb {
-
     background-color: #323232;
     box-shadow: 0 -100vh 0 100vh #b1b1b1, 0 0 15px 5px black;
     border-radius: 8px;
   }
-
-  body {
-    background-color: white;
-  }
 `
 
-export const Wrapper = styled.section`
+export const ContentContainer = styled.div`
   display: grid;
-  position: relative;
-  align-items: center;
-  padding: 4px 44px;
-`
-
-export const Container = styled.div`
-  z-index: 1;
-  width: 100%;
-  max-width: 1300px;
-  margin-right: auto;
-  margin-left: auto;
+  //width: 100%;
+  max-width: 1800px;
+  margin: 0 auto;
   padding-right: 50px;
   padding-left: 50px;
 

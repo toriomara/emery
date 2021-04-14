@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-import {ButtonPrimary} from '../ButtonPrimary/ButtonPrimary'
-import {ButtonSecondary} from '../ButtonSecondary/ButtonSecondary'
+import {ButtonPrimary} from '../Buttons/ButtonPrimary'
+import {ButtonSecondary} from '../Buttons/ButtonSecondary'
 
 const StyledCar = styled.div`
   display: grid;

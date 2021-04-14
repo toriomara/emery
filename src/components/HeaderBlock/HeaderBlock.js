@@ -1,18 +1,13 @@
-import React, {useState} from 'react'
+import React from 'react'
 import styled from 'styled-components'
-import {Header} from "../Header/Header";
-import {Preheader} from "../Preheader/Preheader";
-import {Menu} from "../Menu/Menu";
+import Navbar from "../Navbar/Navbar"
+import {ContentContainer} from "../globalStyles";
 
-const Screen = styled.section`
+const Screen = styled(ContentContainer)`
   display: grid;
-  //place-items: center;
-  //background: url('https://tesla.com/ns_videos/model-3-social.jpg') no-repeat center center fixed;
-  background-size: cover;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
+  place-items: center;
+  
+  ${ContentContainer}
 `
 
 const Info = styled.div`
@@ -85,13 +80,9 @@ const BtnSecondary = styled(Button)`
 `
 
 const HeaderBlock = () => {
-    const [isMenuOpen, setIsMenuOpen] = useState(false)
-
     return (
-        <div>
-            <Preheader isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen}/>
-            {isMenuOpen && <Menu/>}
-            <Header/>
+        <>
+            <Navbar/>
             <Screen>
                 <Info>
                     <Text>
@@ -101,12 +92,12 @@ const HeaderBlock = () => {
                         </h4>
                     </Text>
                     <Actions>
-                        <BtnPrimary>Custom Order</BtnPrimary>
-                        <BtnSecondary>Existing Inventory</BtnSecondary>
+                        {/*<BtnPrimary>Custom Order</BtnPrimary>
+                        <BtnSecondary>Existing Inventory</BtnSecondary>*/}
                     </Actions>
                 </Info>
             </Screen>
-        </div>
+        </>
     )
 }
 

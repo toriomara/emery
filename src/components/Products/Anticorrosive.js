@@ -1,21 +1,17 @@
-import React, {useState} from 'react'
-import styled from 'styled-components'
-import {Preheader} from "../Preheader/Preheader";
-import {Menu} from "../Menu/Menu";
-import {Header} from "../Header/Header";
-import {Container, Wrapper} from "../globalStyles";
+import React from 'react'
+import {ContentContainer} from "../globalStyles";
+import Footer from "../Footer/Footer";
+
+import Navbar from "../Navbar/Navbar";
 
 const Anticorrosive = () => {
-    const [isMenuOpen, setIsMenuOpen] = useState(false)
-
     return (
         <div>
-            <Preheader isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen}/>
-            {isMenuOpen && <Menu/>}
-            <Header/>
-            <Container>
+            <Navbar/>
+            <ContentContainer>
                 <h1>Anticorrosive</h1>
-            </Container>
+            </ContentContainer>
+            <Footer/>
         </div>
     )
 }

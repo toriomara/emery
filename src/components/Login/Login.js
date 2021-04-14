@@ -3,13 +3,18 @@ import styled from 'styled-components'
 import {Link, useHistory} from 'react-router-dom'
 import {MdLanguage} from 'react-icons/md'
 import {PreheaderContainer, TopLogo} from '../Preheader/Preheader'
-import {ButtonPrimary} from '../ButtonPrimary/ButtonPrimary'
-import {ButtonSecondary} from '../ButtonSecondary/ButtonSecondary'
+import {ButtonPrimary} from '../Buttons/ButtonPrimary'
+import {ButtonSecondary} from '../Buttons/ButtonSecondary'
 import {auth} from '../firebase'
 import {useDispatch} from 'react-redux'
 import {login} from '../../features/userSlice'
-import {Wrapper} from '../globalStyles'
 
+export const LoginWrapper = styled.section`
+  display: grid;
+  position: relative;
+  //align-items: center;
+ // padding: 4px 44px;
+`
 
 // Доделать тень при наведении
 export const LoginLanguage = styled.div`
@@ -148,7 +153,7 @@ const Login = () => {
     }
 
     return (
-        <Wrapper>
+        <LoginWrapper>
             <PreheaderContainer>
                 <TopLogo/>
                 <LoginLanguage>
@@ -188,7 +193,7 @@ const Login = () => {
                     <ButtonSecondary name='Create Account'>Sign In</ButtonSecondary>
                 </Link>
             </Info>
-        </Wrapper>
+        </LoginWrapper>
     )
 }
 

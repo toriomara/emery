@@ -1,21 +1,14 @@
-import React, {useState} from 'react'
-import styled from 'styled-components'
-import {Preheader} from "../Preheader/Preheader";
-import {Menu} from "../Menu/Menu";
-import {Header} from "../Header/Header";
-import {Wrapper} from "../globalStyles";
+import React from 'react'
+import {ContentContainer} from "../globalStyles"
+import Navbar from "../Navbar/Navbar"
 
 const Production = () => {
-    const [isMenuOpen, setIsMenuOpen] = useState(false)
-
     return (
         <div>
-            <Preheader isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen}/>
-            {isMenuOpen && <Menu/>}
-            <Header/>
-            <Wrapper>
+            <Navbar/>
+            <ContentContainer>
                 <h1>PRODUCTION</h1>
-            </Wrapper>
+            </ContentContainer>
         </div>
     )
 }

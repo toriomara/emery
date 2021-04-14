@@ -1,17 +1,11 @@
-import React, {useState} from 'react'
-import styled from 'styled-components'
-import {Preheader} from "../Preheader/Preheader"
-import {Menu} from "../Menu/Menu"
-import {Header} from "../Header/Header"
+import React from 'react'
+import Navbar from "../Navbar/Navbar";
 
 const Distribution = () => {
-    const [isMenuOpen, setIsMenuOpen] = useState(false)
 
     return (
         <div>
-            <Preheader isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen}/>
-            {isMenuOpen && <Menu/>}
-            <Header/>
+            <Navbar/>
             <h1>Distribution</h1>
         </div>
     )

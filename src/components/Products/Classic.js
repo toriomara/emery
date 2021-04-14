@@ -1,21 +1,14 @@
-import React, {useState} from 'react'
-import styled from 'styled-components'
-import {Preheader} from "../Preheader/Preheader";
-import {Wrapper} from "../globalStyles";
-import {Menu} from "../Menu/Menu";
-import {Header} from "../Header/Header";
+import React from 'react'
+import {ContentContainer} from "../globalStyles";
+import Navbar from "../Navbar/Navbar";
 
 const Classic = () => {
-    const [isMenuOpen, setIsMenuOpen] = useState(false)
-
     return (
         <div>
-            <Preheader isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen}/>
-            {isMenuOpen && <Menu/>}
-            <Header/>
-            <Wrapper>
+            <Navbar/>
+            <ContentContainer>
                 <h1>Classic</h1>
-            </Wrapper>
+            </ContentContainer>
         </div>
     )
 }
