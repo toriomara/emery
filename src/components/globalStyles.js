@@ -53,9 +53,18 @@ const GlobalStyle = createGlobalStyle`
   }
 `
 
+export const AppWrapper = styled.div`
+  max-width: calc(1700px + 16px * 2);
+  margin: 0 auto;
+  display: flex;
+  min-height: 100%;
+  padding: 0 16px;
+  flex-direction: column;
+`
+
 export const ContentContainer = styled.div`
   display: grid;
-  //width: 100%;
+  width: 100%;
   max-width: 1800px;
   margin: 0 auto;
   padding-right: 50px;

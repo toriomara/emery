@@ -44,13 +44,6 @@ const Signup = () => {
 
     return (
         <LoginWrapper>
-            <PreheaderContainer>
-                <TopLogo/>
-                <LoginLanguage>
-                    <MdLanguage/>
-                    <span>en-US</span>
-                </LoginLanguage>
-            </PreheaderContainer>
             <Info>
                 <h1>Create Account</h1>
                 <LoginForm>

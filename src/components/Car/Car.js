@@ -4,7 +4,7 @@ import {ButtonPrimary} from '../Buttons/ButtonPrimary'
 import {ButtonSecondary} from '../Buttons/ButtonSecondary'
 
 const StyledCar = styled.div`
-  display: grid;
+  //display: grid;
   place-items: center;
   gap: 30px;
   padding: 40px 140px 40px;

@@ -154,13 +154,6 @@ const Login = () => {
 
     return (
         <LoginWrapper>
-            <PreheaderContainer>
-                <TopLogo/>
-                <LoginLanguage>
-                    <MdLanguage/>
-                    <span>en-US</span>
-                </LoginLanguage>
-            </PreheaderContainer>
             <Info>
                 <h1>Sign In</h1>
                 <LoginForm>

@@ -5,8 +5,8 @@ import {logout, selectUser} from '../../features/userSlice'
 import {useDispatch, useSelector} from 'react-redux'
 import Car from '../Car/Car'
 import {auth} from '../firebase'
-import Navbar from "../Navbar/Navbar";
-import {ContentContainer} from "../globalStyles";
+import {ContentContainer} from '../globalStyles'
+import Main from '../../layouts/Main'
 
 const Info = styled(ContentContainer)`
   display: flex;
@@ -59,8 +59,7 @@ const Account = (/*{isMenuOpen, setIsMenuOpen}*/) => {
             .catch((error) => alert(error.message))
     }
     return (
-        <>
-            <Navbar/>
+        <Main>
             <Info>
                 <Person>
                     <h4>{user?.displayName + "'s Tesla"}</h4>
@@ -72,16 +71,9 @@ const Account = (/*{isMenuOpen, setIsMenuOpen}*/) => {
                     <Link to='/' onClick={logoutOfApp}>Sign out</Link>
                 </InnerMenu>
             </Info>
-            <Car
-                imgSrc="https://www.tesla.com/tesla_theme/assets/img/mytesla/v3/header-nocar-models@2x.jpg?20170815"
-                model='model s'
-                testDrive
-            />
-            <Car
-                imgSrc='https://www.tesla.com/tesla_theme/assets/img/mytesla/v3/header-nocar-modelx@2x.jpg?20170815'
-                model='model x'
-            />
-        </>
+
+            CAAAAR
+        </Main>
     )
 }
 
