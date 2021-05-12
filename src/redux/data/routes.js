@@ -38,7 +38,7 @@ export const routes = [
     },
     {
         label: 'Facade',
-        path: '/facade',
+        path: '/front',
     },
     {
         label: 'Account',

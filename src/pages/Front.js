@@ -1,12 +1,12 @@
 import React from 'react'
 import Main from '../layouts/Main'
 
-const News = () => {
+const Front = () => {
     return (
         <Main>
-            <h1>News</h1>
+            <h1>Facade</h1>
         </Main>
     )
 }
 
-export default News
+export default Front

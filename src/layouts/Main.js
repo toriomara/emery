@@ -1,9 +1,8 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import Footer from "../components/Template/Footer/Footer";
-import Header from "../components/Template/Header/Header";
-import NewFooter from "../components/Template/Footer/Footer"
-import styled from "styled-components"
+import React from 'react'
+import PropTypes from 'prop-types'
+import Footer from '../components/Template/Footer/Footer'
+import Header from '../components/Template/Header/Header'
+import styled from 'styled-components'
 
 const Wrapper = styled.div`
   display: flex;

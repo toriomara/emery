@@ -2,11 +2,15 @@ import styled, {keyframes} from 'styled-components'
 
 export const NavigationsWrapper = styled.div`
   display: flex;
+  //padding: 15px 0;
   height: 60px;
+  //margin: 10px 0;
   align-items: center;
-  //margin: 0 auto;
   justify-content: space-between;
+  border-bottom: 1px solid #afb0b1;
+  margin-bottom: 30px;
 `
+
 export const Menu = styled.ul`
   display: flex;
 

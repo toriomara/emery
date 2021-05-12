@@ -1,11 +1,12 @@
 import React from 'react'
+import Main from '../layouts/Main'
 
 const Documentation = () => {
     return (
-        <div>
+        <Main>
             <h1>Documentation</h1>
-        </div>
+        </Main>
     )
 }
 
-export default Documentation;
+export default Documentation

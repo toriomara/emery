@@ -9,10 +9,10 @@ export const Icon = styled.p`
   //flex: 0 1 150px; /*  No stretching: */
   margin: 10px 25px;
   font-size: 25px;
-  color: #6b6b6b;
+  color: #e20001;
 
   &:hover {
-    color: red;
+    color: #6b6b6b;
     transition: 0.3s ease-out;
   }
 `

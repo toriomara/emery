@@ -13,7 +13,7 @@ import Contacts from "./pages/Contacts";
 import News from "./pages/News";
 import Classic from "./pages/Classic";
 import Anticorrosive from "./pages/Anticorrosive";
-import Facade from "./pages/Facade";
+import Front from "./pages/Front";
 import Winter from "./pages/Winter";
 import Index from "./pages/Index";
 import GlobalStyle, {AppWrapper} from "./components/globalStyles";
@@ -98,8 +98,8 @@ function App() {
                         <Anticorrosive/>
                     </Route>
 
-                    <Route path='/facade' component={Facade}>
-                        <Facade/>
+                    <Route path='/front' component={Front}>
+                        <Front/>
                     </Route>
                 </AppWrapper>
             </Switch>

@@ -1,11 +1,11 @@
-import React, {useRef, useEffect} from "react"
-import {gsap} from "gsap"
-import {Link, NavLink} from "react-router-dom"
+import React, {useRef, useEffect} from 'react'
+import {gsap} from 'gsap'
+import {NavLink} from 'react-router-dom'
 import {products} from '../../../redux/data/products'
+import styled from 'styled-components'
 import {
     staggerText,
     staggerReveal,
-    fadeInUp,
     handleHover,
     handleHoverExit,
     handleCityReturn,
@@ -14,30 +14,22 @@ import {
 } from "./Animation"
 
 import {
-    Language,
-    NavMenu, RedButton,
-    //RedContainer,
     RedHamburgerMenu,
     RedMenuCityBackground,
     RedMenuLayer,
-    RedMenuSecondaryBackgroundColor, RightMenu,
+    RedMenuSecondaryBackgroundColor,
     RInfo,
     RLocations,
     RMenuLinks,
     RNav,
-    RWrapper, Search
-} from "./Hamburger.elements"
-import styled from "styled-components";
-import {TopLogo} from "../../Preheader/Preheader";
-import {MdLanguage, MdSearch} from "react-icons/md";
-
+    RWrapper
+} from './Hamburger.elements'
 
 const RedContainer = styled.div`
   width: 100%;
   max-width: 80%;
   margin: 0 auto;
 `
-
 
 const Hamburger = ({state}) => {
 
@@ -107,13 +99,13 @@ const Hamburger = ({state}) => {
                                         </NavLink>
                                     </li>
                                     <li>
-                                        <Link
+                                        <NavLink
                                             onMouseEnter={e => handleHover(e)}
                                             onMouseOut={e => handleHoverExit(e)}
                                             ref={el => (line2 = el)}
                                             to='/production'>
                                             Продукция
-                                        </Link>
+                                        </NavLink>
                                     </li>
                                     <li>
                                         <NavLink
@@ -176,15 +168,15 @@ const Hamburger = ({state}) => {
                                 Продукты:
                                 {/* Returning the list of cities */}
                                 {products.map(el => (
-                                    <a href={el.link}>
+                                    <NavLink to={el.link}>
                                         <span
                                             key={el.name}
-                                            onMouseEnter={() => handleCity(el.image, cityBackground)}
+                                            onMouseEnter={() => handleCity(el.imageBG, cityBackground)}
                                             onMouseOut={() => handleCityReturn(cityBackground)}
                                         >
                                             {el.name}
                                         </span>
-                                    </a>
+                                    </NavLink>
                                 ))}
                             </RLocations>
                         </RMenuLinks>
