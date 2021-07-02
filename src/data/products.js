@@ -1,11 +1,11 @@
-import dallas from '../../img/products/productBG/dallas.webp'
-import austin from '../../img/products/productBG/austin.webp'
-import newyork from '../../img/products/productBG/newyork.webp'
-import winterBG from '../../img/products/productBG/winterBG.jpg'
-import classic from '../../img/products/classic.jpg'
-import front from '../../img/products/front.jpg'
-import anticorrosive from '../../img/products/anticorrosive.jpg'
-import winter from '../../img/products/winter.jpg'
+import dallas from '../img/products/productBG/dallas.webp'
+import austin from '../img/products/productBG/austin.webp'
+import newyork from '../img/products/productBG/newyork.webp'
+import winterBG from '../img/products/productBG/winterBG.jpg'
+import classic from '../img/products/classic.jpg'
+import front from '../img/products/front.jpg'
+import anticorrosive from '../img/products/anticorrosive.jpg'
+import winter from '../img/products/winter.jpg'
 
 export const products = [
     {

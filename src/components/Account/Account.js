@@ -71,8 +71,7 @@ const Account = (/*{isMenuOpen, setIsMenuOpen}*/) => {
                     <Link to='/' onClick={logoutOfApp}>Sign out</Link>
                 </InnerMenu>
             </Info>
-
-            CAAAAR
+            CAR
         </Main>
     )
 }

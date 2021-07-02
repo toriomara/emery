@@ -3,6 +3,8 @@ import Main from '../layouts/Main'
 import img from '../img/logo512.png'
 import {TweenMax, Power3} from 'gsap'
 import styled from 'styled-components'
+import {useSelector} from "react-redux";
+import {selectRoutes} from "../features/routeSlice";
 
 const Title = styled.h1`
   display: flex;
@@ -86,7 +88,6 @@ const Anticorrosive = () => {
                 ></CircleRed>
                 <CircleBlue ref={el => {circleBlue = el}}></CircleBlue>
             </CircleContainer>
-
         </Main>
     )
 }

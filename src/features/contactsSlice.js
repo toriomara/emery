@@ -1,32 +1,38 @@
-import {createSlice} from "@reduxjs/toolkit";
+import {createSlice} from '@reduxjs/toolkit'
+import {FaFacebook, FaTwitter, FaYoutube} from 'react-icons/fa'
+import {AiFillInstagram} from 'react-icons/ai'
 
-const contactsSlice = createSlice({
-    name: 'contacts',
-    initialState: {
-        count: 0,
-        todos: [
-            'Shoot video',
-            'Cut video',
-            'Talking about it'
-        ]
-    },
-    reducers: {
-        increment(state) {
-            state.count = state.count + 1
+const initialState = {
+    contacts: [
+        {
+            link: 'https://ya.ru',
+            label: 'Facebook',
+            icon: <FaFacebook/>
         },
-        decrement(state) {
-            state.count = state.count - 1
+        {
+            link: 'https://yandex.ru',
+            label: 'Instagram',
+            icon: <AiFillInstagram/>
         },
-        addTodo(state, action) {
-            state.todos.push(action.payload)
+        {
+            link: 'https://mail.ru',
+            label: 'Youtube',
+            icon: <FaYoutube/>
         },
-        removeLastTodo(state) {
-            state.todos.pop()
-        }
-    }
-})
+        {
+            link: 'https://google.com',
+            label: 'Twitter',
+            icon: <FaTwitter/>
+        },
+    ]
+}
+    const contactSlice = createSlice({
+        name: 'contact',
+        initialState,
+        reducers: {}
+    })
 
-export default toolkitSlice.reducer
+    export const selectContact = state => state.contact.contacts
 
-export const {increment, decrement, addTodo, removeLastTodo} = toolkitSlice.actions
+    export default contactSlice.reducer
 

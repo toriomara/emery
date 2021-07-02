@@ -1,38 +1,116 @@
 import {createSlice} from '@reduxjs/toolkit'
-import {FaFacebook, FaTwitter, FaYoutube} from 'react-icons/fa'
-import {AiFillInstagram} from 'react-icons/ai'
+import {AiOutlineMail} from 'react-icons/ai'
+import {GoLocation} from 'react-icons/go'
+import {IoIosPhonePortrait} from 'react-icons/io'
+import {FiPhone} from 'react-icons/fi'
+import React from 'react'
 
 const initialState = {
+    logo: [
+
+    ],
+    company: [
+        {
+            index: true,
+            label: 'Компания',
+            path: '/',
+        },
+        {
+            label: 'О нас',
+            path: '/production',
+        },
+        {
+            label: 'Для прессы',
+            path: '/documentation',
+        },
+        {
+            label: 'Новости',
+            path: '/distribution',
+        },
+        {
+            label: 'Дилерам',
+            path: '/news',
+        },
+        {
+            label: 'Дистрибьюция',
+            path: '/contacts',
+        }
+    ],
+    info: [
+        {
+            index: true,
+            label: 'Информация',
+            path: '/',
+        },
+        {
+            label: 'Документация',
+            path: '/production',
+        },
+        {
+            label: 'Поддержка',
+            path: '/documentation',
+        },
+        {
+            label: 'Условия',
+            path: '/distribution',
+        },
+        {
+            label: 'Технология',
+            path: '/news',
+        },
+        {
+            label: 'Доставка',
+            path: '/contacts',
+        }
+    ],
     contacts: [
         {
-            link: 'https://ya.ru',
-            label: 'Facebook',
-            icon: <FaFacebook/>
+            index: true,
+            label: 'Контакты',
+            path: '',
+            icon: ''
         },
         {
-            link: 'https://yandex.ru',
-            label: 'Instagram',
-            icon: <AiFillInstagram/>
+            label: '400019, Россия, г. Волгоград, ул. Слесарная, 103',
+            path: '',
+            icon: <GoLocation/>
         },
         {
-            link: 'https://mail.ru',
-            label: 'Youtube',
-            icon: <FaYoutube/>
+            label: 'korund@korund.ru',
+            path: '',
+            icon: <AiOutlineMail/>
         },
         {
-            link: 'https://google.com',
-            label: 'Twitter',
-            icon: <FaTwitter/>
+            label: '+7 988 988-51-11',
+            path: '',
+            icon: <IoIosPhonePortrait/>
         },
+        {
+            label: '+7 (8442) 46-95-86',
+            path: '',
+            icon: <FiPhone/>
+        },
+        {
+            label: '+7 (8442) 50-40-76',
+            path: '',
+            icon: ''
+        },
+        {
+            label: '+7 (8442) 41-23-45',
+            path: '',
+            icon: ''
+        }
     ]
 }
-    const contactSlice = createSlice({
-        name: 'contact',
+    const footerSlice = createSlice({
+        name: 'footer',
         initialState,
         reducers: {}
     })
 
-    export const selectContact = state => state.contact.contacts
+    export const selectCompany = state => state.footer.company
+    export const selectInfo = state => state.footer.info
+    export const selectContacts = state => state.footer.contacts
 
-    export default contactSlice.reducer
+    export default footerSlice.reducer
 

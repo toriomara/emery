@@ -1,43 +1,32 @@
-import {createSlice} from '@reduxjs/toolkit'
-//import {routesNavi} from "../data/routes";
+import {createSlice} from "@reduxjs/toolkit";
 
-export const routesNaviSlice = createSlice({
-    name: 'routesNavi',
+const toolkitSlice = createSlice({
+    name: 'toolkit',
     initialState: {
-        routesNavi: [
-            {
-                label: 'Главная',
-                path: '/',
-            },
-            {
-                label: 'Продукция',
-                path: '/production',
-            },
-            {
-                label: 'Документация',
-                path: '/documentation',
-            },
-            {
-                label: 'Дистрибьюция',
-                path: '/distribution',
-            },
-            {
-                label: 'Новости',
-                path: '/news',
-            },
-            {
-                label: 'Контакты',
-                path: '/contacts',
-            },
+        count: 0,
+        todos: [
+            'Shoot video',
+            'Cut video',
+            'Talking about it'
         ]
     },
     reducers: {
-
-    },
+        increment(state) {
+            state.count += 1
+        },
+        decrement(state) {
+            state.count -= 1
+        },
+        addTodo(state, action) {
+            state.todos.push(action.payload)
+        },
+        removeLastTodo(state) {
+            state.todos.pop()
+        }
+    }
 })
 
-export const {} = routesNaviSlice.actions
+export default toolkitSlice.reducer
 
-export const selectUser = (state) => state.user.user
+export const {increment, decrement, addTodo, removeLastTodo} = toolkitSlice.actions
 
-export default routesNaviSlice.reducer

@@ -36,7 +36,7 @@ const initialState = {
     status: "idle", // loading state
 }
 
-function catsSlice(state = initialState, action) {
+function catsReducer(state = initialState, action) {
     switch (action.type) {
         // sync actions
         case "cats/catAdded":
@@ -70,4 +70,4 @@ function catsSlice(state = initialState, action) {
     }
 }
 
-export default catsSlice
+export default catsReducer

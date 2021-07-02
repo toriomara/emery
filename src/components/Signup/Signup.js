@@ -1,14 +1,12 @@
 import React, {useState} from 'react'
-import {PreheaderContainer, TopLogo} from '../Preheader/Preheader'
 import {Link, useHistory} from 'react-router-dom'
 import {ButtonPrimary} from '../Buttons/ButtonPrimary'
 import {ButtonSecondary} from '../Buttons/ButtonSecondary'
 import {useDispatch} from 'react-redux'
-import {Info, LoginForm, Name, Password, LoginDivider, LoginLanguage} from '../Login/Login'
+import {Info, LoginForm, Name, Password, LoginDivider} from '../Login/Login'
 import {auth} from '../firebase'
 import {login} from '../../features/userSlice'
-import {MdLanguage} from "react-icons/md";
-import {LoginWrapper} from "../Login/Login";
+import {LoginWrapper} from '../Login/Login'
 
 const Signup = () => {
     const [email, setEmail] = useState('')

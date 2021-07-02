@@ -1,8 +1,8 @@
 import React, {useState} from 'react'
 import styled from 'styled-components'
 import {Link, useHistory} from 'react-router-dom'
-import {MdLanguage} from 'react-icons/md'
-import {PreheaderContainer, TopLogo} from '../Preheader/Preheader'
+//import {MdLanguage} from 'react-icons/md'
+//import {PreheaderContainer, TopLogo} from '../Preheader/Preheader'
 import {ButtonPrimary} from '../Buttons/ButtonPrimary'
 import {ButtonSecondary} from '../Buttons/ButtonSecondary'
 import {auth} from '../firebase'
@@ -141,8 +141,9 @@ const Login = () => {
     const signIn = (e) => {
         e.preventDefault()
 
-        auth.signInWithEmailAndPassword(email, password).then((userAuth) => {
-            dispatch(login({
+        auth.signInWithEmailAndPassword(email, password)
+            .then((userAuth) => {
+                dispatch(login({
                     email: userAuth.user.email,
                     uid: userAuth.user.uid,
                     displayName: userAuth.user.displayName

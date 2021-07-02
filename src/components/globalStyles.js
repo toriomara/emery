@@ -39,16 +39,18 @@ const GlobalStyle = createGlobalStyle`
   }
 
   ::-webkit-scrollbar {
-    width: 10px;
+    width: 5px;
   }
 
   ::-webkit-scrollbar-track {
+    width: 10px;
+
     background: #eee;
   }
 
   ::-webkit-scrollbar-thumb {
     background-color: #323232;
-    box-shadow: 0 -100vh 0 100vh #b1b1b1, 0 0 15px 5px black;
+    box-shadow: 0 -100vh 0 100vh #b1b1b1/*, 0 0 15px 5px black*/;
     border-radius: 8px;
   }
 `

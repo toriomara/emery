@@ -13,6 +13,12 @@ const Language = () => {
     return (
         <StyledLanguage>
             <MdLanguage/>
+            <select>
+                <option defaultValue="RU">RU</option>
+                <option value="EN">EN</option>
+                <option value="DE">DE</option>
+                <option value="ZN">ZN</option>
+            </select>
         </StyledLanguage>
     )
 }

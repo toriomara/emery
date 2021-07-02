@@ -27,15 +27,9 @@ const Search = () => {
 
     let content = null
 
-    if (showMode) {
-        content = (
-            <StyledInput/>
-        )
-    }
-
     return (
         <StyledSearch>
-            {content}
+            {{content} && (showMode) ? <StyledInput/> : null}
             <MdSearch onClick={handleClick}/>
         </StyledSearch>
     )

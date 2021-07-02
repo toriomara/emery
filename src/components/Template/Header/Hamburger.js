@@ -1,7 +1,7 @@
 import React, {useRef, useEffect} from 'react'
 import {gsap} from 'gsap'
 import {NavLink} from 'react-router-dom'
-import {products} from '../../../redux/data/products'
+import {products} from '../../../data/products'
 import styled from 'styled-components'
 import {
     staggerText,
@@ -168,9 +168,8 @@ const Hamburger = ({state}) => {
                                 Продукты:
                                 {/* Returning the list of cities */}
                                 {products.map(el => (
-                                    <NavLink to={el.link}>
+                                    <NavLink to={el.link} key={el.name}>
                                         <span
-                                            key={el.name}
                                             onMouseEnter={() => handleCity(el.imageBG, cityBackground)}
                                             onMouseOut={() => handleCityReturn(cityBackground)}
                                         >

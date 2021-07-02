@@ -6,19 +6,19 @@ import {login, logout, selectUser} from './features/userSlice'
 import Signup from './components/Signup/Signup'
 import Account from './components/Account/Account'
 import {auth} from './components/firebase'
-import Production from "./pages/Production";
-import Documentation from "./pages/Documentation";
-import Distribution from "./pages/Distribution";
-import Contacts from "./pages/Contacts";
-import News from "./pages/News";
-import Classic from "./pages/Classic";
-import Anticorrosive from "./pages/Anticorrosive";
-import Front from "./pages/Front";
-import Winter from "./pages/Winter";
-import Index from "./pages/Index";
-import GlobalStyle, {AppWrapper} from "./components/globalStyles";
+import Production from './pages/Production'
+import Documentation from './pages/Documentation'
+import Distribution from './pages/Distribution'
+import Contacts from './pages/Contacts'
+import News from './pages/News'
+import Classic from './pages/Classic'
+import Anticorrosive from './pages/Anticorrosive'
+import Front from './pages/Front'
+import Winter from './pages/Winter'
+import Index from './pages/Index'
+import GlobalStyle, {AppWrapper} from './components/globalStyles'
 
-function App() {
+const App = () => {
     const user = useSelector(selectUser)
     const dispatch = useDispatch()
 
@@ -54,9 +54,7 @@ function App() {
                         {user ? <Redirect to='account'/> : <Login/>}
                     </Route>
 
-                    <Route path='/signup'>
-                        <Signup/>
-                    </Route>
+                    <Route path='/signup' render={() => <Signup/>}/>
 
                     <Route path='/account' component={Account}>
                         {!user ? (
@@ -66,41 +64,15 @@ function App() {
                         )}
                     </Route>
 
-                    <Route path='/production'>
-                        <Production/>
-                    </Route>
-
-                    <Route path='/documentation'>
-                        <Documentation/>
-                    </Route>
-
-                    <Route path='/distribution'>
-                        <Distribution/>
-                    </Route>
-
-                    <Route path='/news'>
-                        <News/>
-                    </Route>
-
-                    <Route path='/contacts'>
-                        <Contacts/>
-                    </Route>
-
-                    <Route path='/classic' component={Classic}>
-                        <Classic/>
-                    </Route>
-
-                    <Route path='/winter' component={Winter}>
-                        <Winter/>
-                    </Route>
-
-                    <Route path='/anticorrosive' component={Anticorrosive}>
-                        <Anticorrosive/>
-                    </Route>
-
-                    <Route path='/front' component={Front}>
-                        <Front/>
-                    </Route>
+                    <Route path='/production' render={() => <Production/>}/>
+                    <Route path='/documentation' render={() => <Documentation/>}/>
+                    <Route path='/distribution' render={() => <Distribution/>}/>
+                    <Route path='/news' render={() => <News/>}/>
+                    <Route path='/contacts' render={() => <Contacts/>}/>
+                    <Route path='/classic' render={() => <Classic/>}/>
+                    <Route path='/winter' render={() => <Winter/>}/>
+                    <Route path='/anticorrosive' render={() => <Anticorrosive/>}/>
+                    <Route path='/front' render={() => <Front/>}/>
                 </AppWrapper>
             </Switch>
         </Router>

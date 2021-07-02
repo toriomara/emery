@@ -1,10 +1,14 @@
 import React from 'react'
 import Main from '../layouts/Main'
+import Product from '../components/Product/Product'
 
 const Contacts = () => {
     return (
         <Main>
-            <h1>Contacts</h1>
+            <Product/>
+            <h1>
+                Контакты
+            </h1>
         </Main>
     )
 }

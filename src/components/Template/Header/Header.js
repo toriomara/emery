@@ -1,14 +1,15 @@
-import React, {useState, useEffect} from "react"
-import {withRouter, Link} from "react-router-dom"
-import Hamburger from "./Hamburger"
+import React, {useState, useEffect} from 'react'
+import {withRouter, NavLink} from 'react-router-dom'
+import Hamburger from './Hamburger'
 import {RedButton, RightMenu, NavigationsWrapper} from './Hamburger.elements'
 import {FaBars, FaTimes} from 'react-icons/fa'
-import {routesNavi} from '../../../redux/data/routes'
 import Logo from '../../Logo'
 import {Menu} from './Hamburger.elements'
 import Search from '../../SearchBar/Search'
 import Language from '../../Language'
 import Phone from '../../Phone'
+import {useSelector} from 'react-redux'
+import {selectRoutes} from '../../../features/routeSlice'
 
 const Header = ({history}) => {
     // State of our Menu
@@ -58,13 +59,15 @@ const Header = ({history}) => {
         }, 1200);
     }
 
+    const routesNavi = useSelector(selectRoutes)
+
     return (
         <NavigationsWrapper>
             <Logo/>
             <Menu>
                 {routesNavi.filter((l) => !l.index).map((l) => (
                     <li key={l.label}>
-                        <Link to={l.path}>{l.label}</Link>
+                        <NavLink to={l.path}>{l.label}</NavLink>
                     </li>
                 ))}
             </Menu>

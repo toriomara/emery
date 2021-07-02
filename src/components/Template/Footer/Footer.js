@@ -1,10 +1,11 @@
 import React from 'react'
-import styled from "styled-components"
-import ContactIcons from "../../Contacts/ContactIcons";
+import styled from 'styled-components'
+import ContactIcons from '../../Contacts/ContactIcons'
 import Logo from '../../Logo'
-import {Link} from "react-router-dom";
-import {footerCo, footerContacts, footerInfo} from "../../../redux/data/footer";
-import {Icon} from "../../Contacts/ContactsIcons.element";
+import {Link} from 'react-router-dom'
+import {Icon} from '../../Contacts/ContactsIcons.element'
+import {selectCompany, selectContacts, selectInfo} from '../../../features/footerSlice'
+import {useSelector} from 'react-redux'
 
 const FooterWrapper = styled.div`
   margin-top: auto;
@@ -93,6 +94,11 @@ export const ItemContent = styled.ul`
 `
 
 const Footer = () => {
+
+    const company = useSelector(selectCompany)
+    const info = useSelector(selectInfo)
+    const contacts = useSelector(selectContacts)
+
     return (
         <FooterWrapper>
             <MiddleFooter>
@@ -105,12 +111,12 @@ const Footer = () => {
                 </Item>
                 <Item>
                     <ItemTitle>
-                        {footerCo.filter((l) => l.index).map((l) => (
+                        {company.filter((l) => l.index).map((l) => (
                             <Link key={l.label} to={l.path}>{l.label}</Link>
                         ))}
                     </ItemTitle>
                     <ItemContent>
-                        {footerCo.filter((l) => !l.index).map((l) => (
+                        {company.filter((l) => !l.index).map((l) => (
                             <li key={l.label}>
                                 <Link to={l.path}>{l.label}</Link>
                             </li>
@@ -119,12 +125,12 @@ const Footer = () => {
                 </Item>
                 <Item>
                     <ItemTitle>
-                        {footerInfo.filter((l) => l.index).map((l) => (
+                        {info.filter((l) => l.index).map((l) => (
                             <Link key={l.label} to={l.path}>{l.label}</Link>
                         ))}
                     </ItemTitle>
                     <ItemContent>
-                        {footerInfo.filter((l) => !l.index).map((l) => (
+                        {info.filter((l) => !l.index).map((l) => (
                             <li key={l.label}>
                                 <Link to={l.path}>{l.label}</Link>
                             </li>
@@ -133,12 +139,12 @@ const Footer = () => {
                 </Item>
                 <Item>
                     <ItemTitle>
-                        {footerContacts.filter((l) => l.index).map((l) => (
+                        {contacts.filter((l) => l.index).map((l) => (
                             <Link key={l.label} to={l.path}>{l.label}</Link>
                         ))}
                     </ItemTitle>
                     <ItemContent>
-                        {footerContacts.filter((l) => !l.index).map((l) => (
+                        {contacts.filter((l) => !l.index).map((l) => (
                             <li key={l.label}>
                                 <IconFooter>{l.icon}</IconFooter>
                                 <Link to={l.path}>{l.label}</Link>
@@ -160,9 +166,6 @@ const Footer = () => {
             </MiddleFooter>
             <DownFooter>
                 <ContactIcons/>
-                {/*<Copyright>
-                    © НПО "Фулерен", 2021
-                </Copyright>*/}
             </DownFooter>
         </FooterWrapper>
     );
