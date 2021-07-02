@@ -27,7 +27,7 @@ export const products = [
         volume: '5, 10 и 20 л',
         image: front,
         imageBG: austin,
-        link: '/facade'
+        link: '/front'
     },
     {
         name: "КОРУНД-Антикор",
