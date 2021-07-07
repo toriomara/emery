@@ -5,44 +5,42 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ea45049c-00d0-4709-b029-1de7c6e377a2" name="Default Changelist" comment="first product init">
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Card/Card.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/img/products/anticorrosive.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/img/products/classic.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/img/products/foundation.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/img/products/front-lotus.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/img/products/front.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/img/products/nonflammable.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/img/products/priming-male.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/img/products/priming.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/img/products/sanitary.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/img/products/winter.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/Product.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Account/Account.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Account/Account.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Contacts/ContactIcons.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Contacts/ContactIcons.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Language.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Language.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Login/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Login/Login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Menu/Menu.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Menu/Menu.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Menu/MenuItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Menu/MenuItem.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Phone.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Phone.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Product/Product.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Product/Product.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Buttons/ButtonPrimary.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Buttons/ButtonPrimary.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Product/Product.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/SearchBar/Search.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SearchBar/Search.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Signup/Signup.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Signup/Signup.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Template/Footer/Footer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Template/Footer/Footer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Template/Header/Hamburger.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Template/Header/Hamburger.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Template/Header/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Template/Header/Header.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/currentTime.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/currentTime.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/globalStyles.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/globalStyles.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/preloader.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/preloader.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/data/products.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/products.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/catsReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/catsReducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/contactsSlice.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/contactsSlice.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/dialogs-reducers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/dialogs-reducers.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/footerSlice.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/footerSlice.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/features/productSlice.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/productSlice.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/routeSlice.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/routeSlice.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/toolkitSlice.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/toolkitSlice.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/userSlice.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/userSlice.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/img/products/anticorrosive.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/img/products/classic.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/img/products/foundation.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/img/products/front-lotus.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/img/products/front.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/img/products/nonflammable.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/img/products/priming-male.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/img/products/priming.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/img/products/sanitary.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/img/products/winter.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/Anticorrosive.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Anticorrosive.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/CatList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/CatList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Cats.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Cats.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/Classic.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Classic.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/Contacts.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Contacts.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/DistributionContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/DistributionContainer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Front.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Front.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/News.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/News.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/Production.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Production.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/store.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,9 +52,6 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="ProblemsViewState">
-    <option name="selectedIndex" value="1" />
   </component>
   <component name="ProjectId" id="1oL3tbYloIw0dYrRim9GPz5yf6W" />
   <component name="ProjectLevelVcsManager">
@@ -73,7 +68,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/features" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/pages" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -84,8 +79,8 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Vladimir\PhpstormProjects\emery\src\features" />
       <recent name="C:\Users\Vladimir\PhpstormProjects\emery\src\pages" />
+      <recent name="C:\Users\Vladimir\PhpstormProjects\emery\src\features" />
       <recent name="C:\Users\Vladimir\PhpstormProjects\emery\src\store" />
       <recent name="C:\Users\Vladimir\PhpstormProjects\emery\src\img" />
       <recent name="C:\Users\Vladimir\PhpstormProjects\emery\src\static\css\layout" />
@@ -152,7 +147,9 @@
       <workItem from="1624047636116" duration="64114000" />
       <workItem from="1624626985594" duration="1755000" />
       <workItem from="1624782780968" duration="617000" />
-      <workItem from="1625124160201" duration="14956000" />
+      <workItem from="1625124160201" duration="24979000" />
+      <workItem from="1625235191121" duration="64765000" />
+      <workItem from="1625567408941" duration="28416000" />
     </task>
     <task id="LOCAL-00001" summary="not responsive yet">
       <created>1616390564694</created>
@@ -206,6 +203,7 @@
     <MESSAGE value="before personal site" />
     <MESSAGE value="search block init" />
     <MESSAGE value="first product init" />
-    <option name="LAST_COMMIT_MESSAGE" value="first product init" />
+    <MESSAGE value="with redux toolkit" />
+    <option name="LAST_COMMIT_MESSAGE" value="with redux toolkit" />
   </component>
 </project>

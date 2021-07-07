@@ -11,7 +11,7 @@ import {
     handleCityReturn,
     handleCity,
     staggerRevealClose
-} from "./Animation"
+} from './Animation'
 
 import {
     RedHamburgerMenu,

@@ -66,9 +66,6 @@ const Anticorrosive = () => {
         TweenMax.from(logoItem,1,{opacity: 0, y: 100, ease: Power3.easeOut, delay: .1})
         TweenMax.from(textItem,.8,{opacity: 0, y: 100, ease: Power3.easeOut})
         TweenMax.to(circleContainer,0,{css: {visibility: 'visible'}})
-        /*TweenMax.from(circle,.8,{opacity: 0, x: 40, ease: Power3.easeOut})
-        TweenMax.from(circleRed,.8,{opacity: 0, x: 40, ease: Power3.easeOut, delay: .2})
-        TweenMax.from(circleBlue,.8,{opacity: 0, x: 40, ease: Power3.easeOut, delay: .4})*/
         TweenMax.staggerFrom([circleYellow, circleRed, circleBlue], .8, {opacity: 0, x: 100, ease: Power3.easeOut}, .2 )
     }, [])
 

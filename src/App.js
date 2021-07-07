@@ -17,6 +17,7 @@ import Front from './pages/Front'
 import Winter from './pages/Winter'
 import Index from './pages/Index'
 import GlobalStyle, {AppWrapper} from './components/globalStyles'
+import Product from './pages/Product'
 
 const App = () => {
     const user = useSelector(selectUser)
@@ -64,7 +65,11 @@ const App = () => {
                         )}
                     </Route>
 
-                    <Route path='/production' render={() => <Production/>}/>
+                    <Route exact path='/production' render={() => <Production/>}/>
+                    <Route path='/production/:itemId' render={({match}) => {
+                        const {id} = match.params
+                        return <Product productId={id}/>
+                    }}/>
                     <Route path='/documentation' render={() => <Documentation/>}/>
                     <Route path='/distribution' render={() => <Distribution/>}/>
                     <Route path='/news' render={() => <News/>}/>
