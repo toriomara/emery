@@ -1,45 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="AutoImportSettings">
-    <option name="autoReloadType" value="SELECTIVE" />
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:origin/master" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ea45049c-00d0-4709-b029-1de7c6e377a2" name="Default Changelist" comment="first product init">
-      <change afterPath="$PROJECT_DIR$/src/components/Card/Card.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/img/products/anticorrosive.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/img/products/classic.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/img/products/foundation.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/img/products/front-lotus.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/img/products/front.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/img/products/nonflammable.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/img/products/priming-male.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/img/products/priming.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/img/products/sanitary.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/img/products/winter.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/Product.js" afterDir="false" />
+    <list default="true" id="d825524d-2b6a-4f75-a196-2000350d0016" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Account/Account.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Account/Account.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Buttons/ButtonPrimary.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Buttons/ButtonPrimary.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Product/Product.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SearchBar/Search.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SearchBar/Search.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Template/Header/Hamburger.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Template/Header/Hamburger.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/products.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/products.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/productSlice.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/productSlice.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/img/products/anticorrosive.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/img/products/classic.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/img/products/foundation.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/img/products/front-lotus.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/img/products/front.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/img/products/nonflammable.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/img/products/priming-male.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/img/products/priming.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/img/products/sanitary.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/img/products/winter.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Anticorrosive.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Anticorrosive.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Classic.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Classic.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Contacts.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Contacts.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/News.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/News.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/Production.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Production.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -47,13 +35,10 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings">
-    <execution />
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectId" id="1oL3tbYloIw0dYrRim9GPz5yf6W" />
+  <component name="ProjectId" id="1vDyvHGcqWgxEv1KpyLwk1WfWy0" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
@@ -62,128 +47,29 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
-    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/pages" />
-    <property name="node.js.detected.package.eslint" value="true" />
-    <property name="node.js.path.for.package.eslint" value="project" />
-    <property name="node.js.selected.package.eslint" value="(autodetect)" />
-    <property name="nodejs_package_manager_path" value="yarn" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
-    <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\PhpStorm 2020.2.1\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
-    <property name="vue.rearranger.settings.migration" value="true" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="settings.editor.selected.configurable" value="terminal" />
   </component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Vladimir\PhpstormProjects\emery\src\pages" />
-      <recent name="C:\Users\Vladimir\PhpstormProjects\emery\src\features" />
-      <recent name="C:\Users\Vladimir\PhpstormProjects\emery\src\store" />
-      <recent name="C:\Users\Vladimir\PhpstormProjects\emery\src\img" />
-      <recent name="C:\Users\Vladimir\PhpstormProjects\emery\src\static\css\layout" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Vladimir\PhpstormProjects\emery\src" />
-      <recent name="C:\Users\Vladimir\PhpstormProjects\emery\src\store" />
-      <recent name="C:\Users\Vladimir\PhpstormProjects\emery\src\features" />
-      <recent name="C:\Users\Vladimir\PhpstormProjects\emery\src\redux" />
-      <recent name="C:\Users\Vladimir\PhpstormProjects\emery\src\img\products" />
-    </key>
+  <component name="SvnConfiguration">
+    <configuration />
   </component>
-  <component name="RunAnythingCache">
-    <option name="myCommands">
-      <command value="routes" />
-    </option>
-  </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="ea45049c-00d0-4709-b029-1de7c6e377a2" name="Default Changelist" comment="" />
-      <created>1613052262824</created>
+      <changelist id="d825524d-2b6a-4f75-a196-2000350d0016" name="Default Changelist" comment="" />
+      <created>1626111184130</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1613052262824</updated>
-      <workItem from="1613052268053" duration="2636000" />
-      <workItem from="1613216187972" duration="7379000" />
-      <workItem from="1613479081529" duration="46000" />
-      <workItem from="1613479148492" duration="48000" />
-      <workItem from="1613479429701" duration="160000" />
-      <workItem from="1613479603998" duration="58000" />
-      <workItem from="1613479833043" duration="207695000" />
-      <workItem from="1615532638715" duration="4370000" />
-      <workItem from="1615541460765" duration="127760000" />
-      <workItem from="1616164291420" duration="46103000" />
-      <workItem from="1616478282265" duration="4458000" />
-      <workItem from="1616485734377" duration="41729000" />
-      <workItem from="1616616764067" duration="10344000" />
-      <workItem from="1616702846769" duration="85469000" />
-      <workItem from="1617374236951" duration="222956000" />
-      <workItem from="1618645808620" duration="35769000" />
-      <workItem from="1619080608870" duration="4969000" />
-      <workItem from="1619098164898" duration="3761000" />
-      <workItem from="1619418764134" duration="30000" />
-      <workItem from="1619845973150" duration="1489000" />
-      <workItem from="1619847538510" duration="174000" />
-      <workItem from="1619848637977" duration="1080000" />
-      <workItem from="1620105917259" duration="1959000" />
-      <workItem from="1620125632700" duration="122181000" />
-      <workItem from="1620630359424" duration="82935000" />
-      <workItem from="1620920787514" duration="66185000" />
-      <workItem from="1621513096272" duration="7031000" />
-      <workItem from="1621617795376" duration="17610000" />
-      <workItem from="1621879492166" duration="3643000" />
-      <workItem from="1622141555026" duration="9079000" />
-      <workItem from="1622474639869" duration="21507000" />
-      <workItem from="1622998882393" duration="1524000" />
-      <workItem from="1623156598860" duration="995000" />
-      <workItem from="1623519310034" duration="34000" />
-      <workItem from="1623528984266" duration="6500000" />
-      <workItem from="1623749832860" duration="1349000" />
-      <workItem from="1623789304788" duration="2798000" />
-      <workItem from="1623988927243" duration="2391000" />
-      <workItem from="1624047636116" duration="64114000" />
-      <workItem from="1624626985594" duration="1755000" />
-      <workItem from="1624782780968" duration="617000" />
-      <workItem from="1625124160201" duration="24979000" />
-      <workItem from="1625235191121" duration="64765000" />
-      <workItem from="1625567408941" duration="28416000" />
+      <updated>1626111184130</updated>
+      <workItem from="1626111192173" duration="1149000" />
     </task>
-    <task id="LOCAL-00001" summary="not responsive yet">
-      <created>1616390564694</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1616390564694</updated>
-    </task>
-    <task id="LOCAL-00002" summary="before personal site">
-      <created>1618412938645</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1618412938645</updated>
-    </task>
-    <task id="LOCAL-00003" summary="search block init">
-      <created>1620495024125</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1620495024125</updated>
-    </task>
-    <task id="LOCAL-00004" summary="first product init">
-      <created>1620852829015</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1620852829015</updated>
-    </task>
-    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="3" />
+    <option name="version" value="2" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -197,13 +83,22 @@
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
-  <component name="VcsManagerConfiguration">
-    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="not responsive yet" />
-    <MESSAGE value="before personal site" />
-    <MESSAGE value="search block init" />
-    <MESSAGE value="first product init" />
-    <MESSAGE value="with redux toolkit" />
-    <option name="LAST_COMMIT_MESSAGE" value="with redux toolkit" />
+  <component name="WindowStateProjectService">
+    <state x="904" y="303" key="FileChooserDialogImpl" timestamp="1626112552594">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="904" y="303" key="FileChooserDialogImpl/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1626112552594" />
+    <state x="625" y="207" key="SettingsEditor" timestamp="1626112585279">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="625" y="207" key="SettingsEditor/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1626112585279" />
+    <state x="769" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1626110870128">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="769" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1626110870128" />
+    <state x="760" y="421" key="git4idea.remote.GitConfigureRemotesDialog" timestamp="1626091720418">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="760" y="421" key="git4idea.remote.GitConfigureRemotesDialog/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1626091720418" />
   </component>
 </project>

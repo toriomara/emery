@@ -15,6 +15,7 @@ const Container = styled.section`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 20px;
+  margin: 50px 0;
 `
 
 const Card = styled.div`
@@ -83,9 +84,7 @@ const Production = () => {
 
             <Container>
                 {product.map((l, id) => (
-                    <Card key={id} ref={el => {
-                        productItem = el
-                    }}>
+                    <Card key={id} ref={el => {productItem = el}}>
                         <Product>
                             <NavLink to={l.link}>
                                 <Image src={l.image} alt={l.name}/>
