@@ -3,8 +3,7 @@ import styled from 'styled-components'
 import {Link, useHistory} from 'react-router-dom'
 //import {MdLanguage} from 'react-icons/md'
 //import {PreheaderContainer, TopLogo} from '../Preheader/Preheader'
-import {ButtonPrimary} from '../Buttons/ButtonPrimary'
-import {ButtonSecondary} from '../Buttons/ButtonSecondary'
+import {ButtonPrimary, ButtonSecondary} from '../Buttons/ButtonPrimary'
 import {auth} from '../firebase'
 import {useDispatch} from 'react-redux'
 import {login} from '../../features/userSlice'
@@ -70,10 +69,11 @@ export const Name = styled.div`
 
   & input {
     margin-bottom: 2rem;
+    align-items: center;
     background-color: #f4f4f4;
     border: 1px solid #f4f4f4;
     outline: none;
-    border-radius: 3rem;
+    border-radius: 0.5rem;
     padding: 0.6rem 1.25rem;
     color: #393c41;
     font-weight: 600;
@@ -102,7 +102,7 @@ export const Password = styled.div`
     background-color: #f4f4f4;
     border: 1px solid #f4f4f4;
     outline: none;
-    border-radius: 3rem;
+    border-radius: 0.5rem;
     padding: 0.6rem 1.25rem;
     color: #393c41;
     font-weight: 600;

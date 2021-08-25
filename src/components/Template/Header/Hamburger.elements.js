@@ -20,6 +20,7 @@ export const Menu = styled.ul`
     line-height: 1;
     margin-left: 16px;
     padding-left: 16px;
+     transition: text-shadow .3s;
 
     &:first-child {
       border-left: 0;
@@ -33,6 +34,15 @@ export const Menu = styled.ul`
       text-transform: uppercase;
       color: #393c41;
     }
+    
+     :hover {
+        text-shadow: 0 0 .8px #333, 0 0 .8px #333;
+     }
+          
+     .active {
+        text-shadow: 0 0 .8px #333, 0 0 .65px #333;
+     }
+  
   }
 
   @media screen and (max-width: 960px) {

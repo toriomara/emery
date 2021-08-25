@@ -1,11 +1,13 @@
 import React, {useEffect, useRef, useState} from 'react'
-import Main from '../layouts/Main'
-import {NavLink} from 'react-router-dom'
+import {Link} from 'react-router-dom'
 import {useSelector} from 'react-redux'
-import {selectProduct} from '../features/productSlice'
 import styled from 'styled-components'
-import {ButtonPrimary} from '../components/Buttons/ButtonPrimary'
 import {Power3, TweenLite, TweenMax} from 'gsap'
+import {selectProduct} from '../../features/productSlice'
+import {ButtonPrimary} from '../Buttons/ButtonPrimary'
+
+import {useParams} from 'react-router-dom'
+
 
 //import Preloader from '../components/preloader'
 // https://github.com/wrongakram/GSAP-Hero-Animation/blob/master/src/App.js
@@ -68,7 +70,9 @@ const Desc = styled.p`
   margin-top: 20px;
 `
 
-const Production = () => {
+const DocList = () => {
+
+    const {name} = useParams
 
     const product = useSelector(selectProduct)
 
@@ -78,34 +82,30 @@ const Production = () => {
         TweenMax.from(productItem, 2, {opacity: 0, y: 100, ease: Power3.easeOut})
     }, [product])
 
-    return (
-        <Main>
-            <h1>PRODUCTION</h1>
+    const items = product.map((l, id) => (
+        <Card key={id} ref={el => {productItem = el}}>
+            <Product>
+                <Link to={l.link}>
+                    <Image src={l.image} alt={l.name}/>
+                </Link>
+                <Text>
+                    <Link to={`/production/${name}`}>
+                        <Title>{l.name}</Title>
+                    </Link>
+                    <Desc>{l.desc}</Desc>
+                </Text>
+            </Product>
+            <Link to={l.link}>
+                <ButtonPrimary margin='50px' name={l.name}/>
+            </Link>
+        </Card>
+    ))
 
-            <Container>
-                {product.map((l, id) => (
-                    <Card key={id} ref={el => {productItem = el}}>
-                        <Product>
-                            <NavLink to={l.link}>
-                                <Image src={l.image} alt={l.name}/>
-                            </NavLink>
-                            <Text>
-                                <NavLink to={l.link}>
-                                    <Title>{l.name}</Title>
-                                </NavLink>
-                                <Desc>{l.desc}</Desc>
-                            </Text>
-                        </Product>
-                        <NavLink to={l.link}>
-                            <ButtonPrimary margin='50px' name='Подробнее'>
-                                {l.name}
-                            </ButtonPrimary>
-                        </NavLink>
-                    </Card>
-                ))}
-            </Container>
-        </Main>
+    return (
+        <Container>
+            {items}
+        </Container>
     )
 }
 
-export default Production
+export default DocList

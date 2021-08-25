@@ -13,9 +13,9 @@ export const userSlice = createSlice({
         logout: (state) => {
             state.user = null;
         },
-        isFetching: (state, action) => {
+        /*isFetching: (state, action) => {
             state.isFetching = false;
-        },
+        }*/
     },
 });
 

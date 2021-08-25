@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import img from '../img/logo.png'
 import {NavLink} from 'react-router-dom'
 
+
 export const StyledLogo = styled.div`
   display: inline-block;
   background-image: url(${img});

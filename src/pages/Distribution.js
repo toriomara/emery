@@ -1,5 +1,6 @@
 import React from 'react'
 import Main from '../layouts/Main'
+import DocList from "../components/DocList/DocList";
 
 const Distribution = () => {
 

@@ -1,7 +1,6 @@
 import React, {useRef, useEffect} from 'react'
 import {gsap} from 'gsap'
 import {NavLink} from 'react-router-dom'
-import {products} from '../../../data/products'
 import styled from 'styled-components'
 import {
     staggerText,
@@ -24,6 +23,8 @@ import {
     RNav,
     RWrapper
 } from './Hamburger.elements'
+import {useSelector} from 'react-redux'
+import {selectProduct} from '../../../features/productSlice'
 
 const RedContainer = styled.div`
   width: 100%;
@@ -32,6 +33,9 @@ const RedContainer = styled.div`
 `
 
 const Hamburger = ({state}) => {
+
+    const product = useSelector(selectProduct)
+
 
     // Create varibles of our dom nodes
     let menuLayer = useRef(null);
@@ -167,7 +171,7 @@ const Hamburger = ({state}) => {
                             <RLocations>
                                 Продукты:
                                 {/* Returning the list of cities */}
-                                {products.map(el => (
+                                {product.map(el => (
                                     <NavLink to={el.link} key={el.name}>
                                         <span
                                             onMouseEnter={() => handleCity(el.imageBG, cityBackground)}

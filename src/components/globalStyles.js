@@ -78,4 +78,4 @@ export const ContentContainer = styled.div`
   }
 `
 
-export default GlobalStyle
+export default GlobalStyle;

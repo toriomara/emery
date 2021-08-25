@@ -26,13 +26,14 @@ const initialState = {
         },
     ]
 }
-    const contactSlice = createSlice({
-        name: 'contact',
-        initialState,
-        reducers: {}
-    })
 
-    export const selectContact = state => state.contact.contacts
+const contactSlice = createSlice({
+    name: 'contact',
+    initialState,
+    reducers: {}
+})
 
-    export default contactSlice.reducer
+export const selectContact = state => state.contact.contacts
+
+export default contactSlice.reducer
 

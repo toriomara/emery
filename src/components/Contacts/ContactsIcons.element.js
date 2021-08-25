@@ -4,7 +4,7 @@ export const ContactsIconsWrapper = styled.ul`
   display: flex;
 `
 
-export const Icon = styled.p`
+export const Icon = styled.span`
   flex: 1 1 150px; /*  Stretching: */
   //flex: 0 1 150px; /*  No stretching: */
   margin: 10px 25px;

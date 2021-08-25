@@ -1,0 +1,14 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\src",
+    "\\src\\components",
+    "\\src\\components\\Buttons",
+    "\\src\\components\\Template",
+    "\\src\\components\\Template\\Footer",
+    "\\src\\features",
+    "\\src\\pages"
+  ],
+  "SelectedNode": "\\src\\components\\Template\\Footer\\NewsLetter.js",
+  "PreviewInSolutionExplorer": false
+}

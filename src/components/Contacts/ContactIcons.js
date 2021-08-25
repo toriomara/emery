@@ -10,13 +10,11 @@ const ContactIcons = () => {
     return (
         <ContactsIconsWrapper>
             {contact.map(s => (
-                <li key={s.label}>
-                    <a href={s.link}>
-                        <Icon>
-                            {s.icon}
-                        </Icon>
-                    </a>
-                </li>
+                <a href={s.link} key={s.label}>
+                    <Icon>
+                        {s.icon}
+                    </Icon>
+                </a>
             ))}
         </ContactsIconsWrapper>
     )

@@ -9,10 +9,11 @@ const Header = styled.h1`
 `
 
 const Index = () => {
+
     return (
         <Main>
             <Header
-            >САМЫЙ ГЛАВНЫЙ СТРАНИЦ!</Header>
+            >САМЫЙ ГЛАВНАЯ СТРАНИЦА!</Header>
             <h1><Clock/></h1>
         </Main>
     )

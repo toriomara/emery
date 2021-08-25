@@ -12,26 +12,33 @@ import {useSelector} from 'react-redux'
 import {selectRoutes} from '../../../features/routeSlice'
 
 const Header = ({history}) => {
-    // State of our Menu
+    // State of Menu
     const [state, setState] = useState({
         initial: false,
         clicked: null,
         menuName: <FaBars/>,
     })
-    // State of our button
+
+    // State of button
     const [disabled, setDisabled] = useState(false)
 
     //Use Effect
     useEffect(() => {
-        //Listening for page changes.
-        history.listen(() => {
-            setState({clicked: false, menuName: <FaBars/>})
-        })
-    }, [history]);
+            //Listening for page changes
+            let cleanupFunction = false
+            history.listen(() => {
+                if (!cleanupFunction)
+                    setState({clicked: false, menuName: <FaBars/>})
+            })
+            return () => {
+                cleanupFunction = true
+            }
+        }, [history]
+    )
 
     // Toggle menu
     const handleMenu = () => {
-        disableMenu();
+        disableMenu()
         if (state.initial === false) {
             setState({
                 initial: null,
@@ -67,7 +74,7 @@ const Header = ({history}) => {
             <Menu>
                 {routesNavi.filter((l) => !l.index).map((l) => (
                     <li key={l.label}>
-                        <NavLink to={l.path}>{l.label}</NavLink>
+                        <NavLink exact to={l.path}>{l.label}</NavLink>
                     </li>
                 ))}
             </Menu>

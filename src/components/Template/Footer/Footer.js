@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import styled from 'styled-components'
 import ContactIcons from '../../Contacts/ContactIcons'
 import Logo from '../../Logo'
@@ -6,6 +6,9 @@ import {Link} from 'react-router-dom'
 import {Icon} from '../../Contacts/ContactsIcons.element'
 import {selectCompany, selectContacts, selectInfo} from '../../../features/footerSlice'
 import {useSelector} from 'react-redux'
+import NewsLetter from './NewsLetter'
+import Answer from './Answer'
+//import {DataProvider} from './DataContext'
 
 const FooterWrapper = styled.div`
   margin-top: auto;
@@ -62,7 +65,7 @@ const ButtonFooter = styled.button`
   width: 160px;
   margin-top: 20px;
   padding: 7px 12px;
-  border-radius: 3rem;
+  border-radius: 0.5rem;
   text-transform: uppercase;
   color: #171a20;
   font-weight: 600;
@@ -85,7 +88,6 @@ export const ItemTitle = styled.h2`
 `
 
 export const ItemContent = styled.ul`
-
   & a {
     line-height: 1.4;
     text-decoration: none;
@@ -99,8 +101,12 @@ const Footer = () => {
     const info = useSelector(selectInfo)
     const contacts = useSelector(selectContacts)
 
+    const [modalOpen, setModalOpen] = useState(false)
+    const handleClick = () => {setModalOpen(!modalOpen)}
+
     return (
         <FooterWrapper>
+            <NewsLetter/>
             <MiddleFooter>
                 <Item>
                     <Logo/>
@@ -159,9 +165,19 @@ const Footer = () => {
                     <Desc>
                         Ответим на все ваши вопросы
                     </Desc>
-                    <ButtonFooter name='Задать вопрос'>
+                    <ButtonFooter
+                        onClick={handleClick}
+                        type="button">
                         Задать вопрос
                     </ButtonFooter>
+
+                    {
+                        modalOpen &&
+                        /*<DataProvider>*/
+                            <Answer setOpenModal={setModalOpen}/>
+                        /*</DataProvider>*/
+                    }
+
                 </Item>
             </MiddleFooter>
             <DownFooter>

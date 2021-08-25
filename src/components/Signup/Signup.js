@@ -1,7 +1,6 @@
 import React, {useState} from 'react'
 import {Link, useHistory} from 'react-router-dom'
-import {ButtonPrimary} from '../Buttons/ButtonPrimary'
-import {ButtonSecondary} from '../Buttons/ButtonSecondary'
+import {ButtonPrimary, ButtonSecondary} from '../Buttons/ButtonPrimary'
 import {useDispatch} from 'react-redux'
 import {Info, LoginForm, Name, Password, LoginDivider} from '../Login/Login'
 import {auth} from '../firebase'

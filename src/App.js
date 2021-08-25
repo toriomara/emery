@@ -1,12 +1,12 @@
 import React, {useEffect} from 'react'
-import {BrowserRouter as Router, Switch, Route, Redirect} from 'react-router-dom'
+import {Switch, Route, Redirect} from 'react-router-dom'
 import Login from './components/Login/Login'
 import {useDispatch, useSelector} from 'react-redux'
 import {login, logout, selectUser} from './features/userSlice'
 import Signup from './components/Signup/Signup'
 import Account from './components/Account/Account'
 import {auth} from './components/firebase'
-import Production from './pages/Production'
+import ProductionPage from './pages/ProductionPage'
 import Documentation from './pages/Documentation'
 import Distribution from './pages/Distribution'
 import Contacts from './pages/Contacts'
@@ -17,7 +17,8 @@ import Front from './pages/Front'
 import Winter from './pages/Winter'
 import Index from './pages/Index'
 import GlobalStyle, {AppWrapper} from './components/globalStyles'
-import Product from './pages/Product'
+import ProductDetails from "./components/ItemList/ProductDetails";
+import DocumentationDetails from "./components/DocList/DocumentationDetails";
 
 const App = () => {
     const user = useSelector(selectUser)
@@ -39,11 +40,11 @@ const App = () => {
         })
     }, [dispatch])
     return (
-        <Router>
+        <>
             <GlobalStyle/>
             <Switch>
                 <AppWrapper>
-                    <Route exact path='/' component={Index}>
+                    <Route exact path='/'>
                         {!user ? (
                             <Redirect to='login'/>
                         ) : (
@@ -55,9 +56,9 @@ const App = () => {
                         {user ? <Redirect to='account'/> : <Login/>}
                     </Route>
 
-                    <Route path='/signup' render={() => <Signup/>}/>
+                    <Route path='/signup' component={Signup}/>
 
-                    <Route path='/account' component={Account}>
+                    <Route path='/account'>
                         {!user ? (
                             <Redirect to='login'/>
                         ) : (
@@ -65,22 +66,26 @@ const App = () => {
                         )}
                     </Route>
 
-                    <Route exact path='/production' render={() => <Production/>}/>
-                    <Route path='/production/:itemId' render={({match}) => {
-                        const {id} = match.params
-                        return <Product productId={id}/>
-                    }}/>
-                    <Route path='/documentation' render={() => <Documentation/>}/>
-                    <Route path='/distribution' render={() => <Distribution/>}/>
-                    <Route path='/news' render={() => <News/>}/>
-                    <Route path='/contacts' render={() => <Contacts/>}/>
+                    <Route exact path='/production' component={ProductionPage}/>
+                    <Route path='/production/:product' render={({match}) => (
+                        <ProductDetails productName={match.params.product}/>
+                    )}/>
+
+                    <Route exact path='/documentation' component={Documentation}/>
+                    <Route exact path='/documentation/:doc' render={({match}) => (
+                        <DocumentationDetails productName={match.params.doc}/>
+                    )}/>
+
+                    <Route path='/distribution' component={Distribution}/>
+                    <Route path='/news' component={News}/>
+                    <Route path='/contacts' component={Contacts}/>
                     <Route path='/classic' render={() => <Classic/>}/>
                     <Route path='/winter' render={() => <Winter/>}/>
                     <Route path='/anticorrosive' render={() => <Anticorrosive/>}/>
                     <Route path='/front' render={() => <Front/>}/>
                 </AppWrapper>
             </Switch>
-        </Router>
+        </>
     )
 }
 
