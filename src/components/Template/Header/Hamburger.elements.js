@@ -112,7 +112,7 @@ export const RedMenuLayer = styled.div`
 
 const BackgroundEffect = keyframes`
   0% {
-    background-position: 0% 0%;
+    background-position: 0 0;
   }
   25% {
     background-position: 40% 10%;
@@ -124,7 +124,7 @@ const BackgroundEffect = keyframes`
     background-position: 10% 40%;
   }
   100% {
-    background-position: 0% 0%;
+    background-position: 0 0;
   }
 `
 

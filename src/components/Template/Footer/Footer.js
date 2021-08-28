@@ -16,17 +16,12 @@ const FooterWrapper = styled.div`
   gap: 10px;
 `
 
-const Item = styled.div`
-  padding-left: 20px;
-`
-
 const MiddleFooter = styled.div`
   display: grid;
   gap: 1rem;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  color: #393c41;
+  color: var(--dark);
   padding-bottom: 30px;
-  border-bottom: 1px solid #afb0b1;
 `
 
 const DownFooter = styled.div`
@@ -61,7 +56,7 @@ export const Desc = styled.div`
 
 const ButtonFooter = styled.button`
   background-color: transparent;
-  border: 3px solid #171a20;
+  border: 3px solid #343239;
   width: 160px;
   margin-top: 20px;
   padding: 7px 12px;
@@ -74,24 +69,31 @@ const ButtonFooter = styled.button`
   outline: none;
 
   &:hover {
-    background-color: #171a20;
-    color: white;
+    background-color: #343239;
+    color: #fbf9fb;
   }
+`
+
+export const Item = styled.div`
+  padding-left: 20px;
+  color: var(--dark);
 `
 
 export const ItemTitle = styled.h2`
   padding-bottom: 5px;
-
   & a {
-    color: #393c41;
+      color: var(--dark);
   }
 `
 
 export const ItemContent = styled.ul`
-  & a {
+  display: grid;
+  
+  & Link {
     line-height: 1.4;
     text-decoration: none;
-    color: #393c41;
+      color: var(--dark);
+
   }
 `
 
@@ -102,7 +104,9 @@ const Footer = () => {
     const contacts = useSelector(selectContacts)
 
     const [modalOpen, setModalOpen] = useState(false)
-    const handleClick = () => {setModalOpen(!modalOpen)}
+    const handleClick = () => {
+        setModalOpen(!modalOpen)
+    }
 
     return (
         <FooterWrapper>
@@ -117,16 +121,14 @@ const Footer = () => {
                 </Item>
                 <Item>
                     <ItemTitle>
-                        {company.filter((l) => l.index).map((l) => (
-                            <Link key={l.label} to={l.path}>{l.label}</Link>
-                        ))}
+                        Компания
                     </ItemTitle>
                     <ItemContent>
-                        {company.filter((l) => !l.index).map((l) => (
-                            <li key={l.label}>
-                                <Link to={l.path}>{l.label}</Link>
-                            </li>
-                        ))}
+                        <Link to='/about'>О нас</Link>
+                        <Link to='/about'>Для прессы</Link>
+                        <Link to='/about'>Новости</Link>
+                        <Link to='/about'>Дилерам</Link>
+                        <Link to='/about'>Дистрибьюция</Link>
                     </ItemContent>
                 </Item>
                 <Item>
@@ -174,7 +176,7 @@ const Footer = () => {
                     {
                         modalOpen &&
                         /*<DataProvider>*/
-                            <Answer setOpenModal={setModalOpen}/>
+                        <Answer setOpenModal={setModalOpen}/>
                         /*</DataProvider>*/
                     }
 
@@ -187,4 +189,4 @@ const Footer = () => {
     );
 };
 
-export default Footer;
+export default Footer

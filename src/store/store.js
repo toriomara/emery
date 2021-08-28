@@ -4,7 +4,6 @@ import toolkitSlice from '../features/toolkitSlice'
 import catsReducer from '../features/catsReducer'
 import routeSlice from '../features/routeSlice'
 import productSlice from '../features/productSlice'
-import contactsSlice from '../features/contactsSlice'
 import footerSlice from '../features/footerSlice'
 
 export default configureStore({
@@ -14,9 +13,6 @@ export default configureStore({
         cats: catsReducer,
         route: routeSlice,
         product: productSlice,
-        contact: contactsSlice,
         footer: footerSlice,
     }
 })
-
-

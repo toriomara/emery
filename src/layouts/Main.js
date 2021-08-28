@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 import Footer from '../components/Template/Footer/Footer'
 import Header from '../components/Template/Header/Header'
 import styled from 'styled-components'
-
 import { useHistory } from 'react-router-dom'
 import {ButtonPrimary} from '../components/Buttons/ButtonPrimary'
 

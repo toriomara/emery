@@ -6,9 +6,7 @@ import {FiPhone} from 'react-icons/fi'
 import React from 'react'
 
 const initialState = {
-    logo: [
-
-    ],
+    logo: [],
     company: [
         {
             index: true,

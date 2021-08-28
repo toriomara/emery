@@ -5,7 +5,8 @@ export const StyledButtonPrimary = styled.button`
   margin: ${props => props.margin || '20px 20px 20px 20px'};
   color: ${props => props.color || 'white'};
   padding: ${props => props.padding || '12px 40px'};
-  background-color: #e20001;
+  width: 60%;
+  background-color: var(--darkgrey);
   border: none;
   border-radius: 0.5rem 0.5rem 0.5rem 0.5rem;
   text-transform: uppercase;
@@ -16,7 +17,7 @@ export const StyledButtonPrimary = styled.button`
   letter-spacing: 1px;
 
   &:hover {
-    background-color: #ba0001;
+    background-color: var(--light);
   }
 `
 

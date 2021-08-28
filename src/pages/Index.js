@@ -5,7 +5,45 @@ import Clock from '../components/currentTime'
 
 const Header = styled.h1`
   font-size: 25px;
-  color: brown;
+  color: var(--dark);
+`
+
+const Colors = styled.section`
+  margin: 50px 0 50px;
+  position: relative;
+  display: grid;
+  width: 100%;
+  height: 50vh;
+  grid-template-columns: repeat(6, 1fr);
+`
+
+const Light = styled.div`
+  display: grid;
+  background-color: var(--light)
+`
+
+const Grey = styled.div`
+  display: grid;
+  background-color: var(--grey)
+`
+
+const DarkGrey = styled.div`
+  display: grid;
+  background-color: var(--darkgrey)
+`
+const Red = styled.div`
+  display: grid;
+  background-color: var(--red)
+`
+
+const DeepRed = styled.div`
+  display: grid;
+  background-color: var(--deepred)
+`
+
+const Dark = styled.div`
+  display: grid;
+  background-color: var(--dark)
 `
 
 const Index = () => {
@@ -15,6 +53,14 @@ const Index = () => {
             <Header
             >САМЫЙ ГЛАВНАЯ СТРАНИЦА!</Header>
             <h1><Clock/></h1>
+            <Colors>
+                <Light/>
+                <Grey/>
+                <DarkGrey/>
+                <Red/>
+                <DeepRed/>
+                <Dark/>
+            </Colors>
         </Main>
     )
 }

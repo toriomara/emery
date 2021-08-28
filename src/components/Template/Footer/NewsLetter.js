@@ -25,7 +25,7 @@ export const NewsLetterButton = styled.button`
   color: ${props => props.color || 'white'};
   padding: 12px 12px;
   margin: 30px 0 0 0;
-  background-color: #e20001;
+  background-color: var(--red);
   border-radius: 0.5rem 0.5rem 0.5rem 0.5rem;
   text-transform: uppercase;
   font-weight: bold;
