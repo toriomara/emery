@@ -1,12 +1,14 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
-import {Link, useHistory} from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 //import {MdLanguage} from 'react-icons/md'
 //import {PreheaderContainer, TopLogo} from '../Preheader/Preheader'
-import {ButtonPrimary, ButtonSecondary} from '../Buttons/ButtonPrimary'
-import {auth} from '../firebase'
-import {useDispatch} from 'react-redux'
-import {login} from '../../features/userSlice'
+import { auth } from '../firebase'
+import { useDispatch } from 'react-redux'
+import { login } from '../../features/userSlice'
+import { PrimaryButton } from '../Buttons/MainButton'
+import { Input } from '../Template/Footer/Input'
+
 
 export const LoginWrapper = styled.section`
   display: grid;
@@ -55,62 +57,17 @@ export const LoginForm = styled.form`
   flex-direction: column;
 `
 
-export const Name = styled.div`
+export const InputGroup = styled.div`
   display: flex;
   flex-direction: column;
+  margin: 0 0 30px 0;
 
-  & label {
+  label {
     color: #5c5e62;
     font-weight: 500;
     font-size: 1rem;
     padding-left: 1.25rem;
     padding-bottom: 0.2rem;
-  }
-
-  & input {
-    margin-bottom: 2rem;
-    align-items: center;
-    background-color: #f4f4f4;
-    border: 1px solid #f4f4f4;
-    outline: none;
-    border-radius: 0.5rem;
-    padding: 0.6rem 1.25rem;
-    color: #393c41;
-    font-weight: 600;
-
-    &:focus {
-      border: 1px solid #d6d6d6;
-      transition: all .2s;
-    }
-  }
-`
-
-export const Password = styled.div`
-  display: flex;
-  flex-direction: column;
-
-  & label {
-    color: #5c5e62;
-    font-weight: 500;
-    font-size: 1rem;
-    padding-left: 1.25rem;
-    padding-bottom: 0.2rem;
-  }
-
-  & input {
-    margin-bottom: 2rem;
-    background-color: #f4f4f4;
-    border: 1px solid #f4f4f4;
-    outline: none;
-    border-radius: 0.5rem;
-    padding: 0.6rem 1.25rem;
-    color: #393c41;
-    font-weight: 600;
-
-    &:focus {
-      border: 1px solid #d6d6d6;
-      transition: all .2s;
-    }
   }
 `
 
@@ -133,62 +90,73 @@ export const LoginDivider = styled.div`
 `
 
 const Login = () => {
-    const [email, setEmail] = useState('')
-    const [password, setPassword] = useState('')
-    const dispatch = useDispatch()
-    const history = useHistory()
+	const [email, setEmail] = useState('')
+	const [password, setPassword] = useState('')
+	const dispatch = useDispatch()
+	const history = useHistory()
 
-    const signIn = (e) => {
-        e.preventDefault()
+	function handleClick () {
+		history.push('/signup')
+	}
 
-        auth.signInWithEmailAndPassword(email, password)
-            .then((userAuth) => {
-                dispatch(login({
-                    email: userAuth.user.email,
-                    uid: userAuth.user.uid,
-                    displayName: userAuth.user.displayName
-                })
-            )
-            history.push('/')
-        }).catch((error) => alert(error.message))
-    }
+	const signIn = (e) => {
+		e.preventDefault()
 
-    return (
-        <LoginWrapper>
-            <Info>
-                <h1>Sign In</h1>
-                <LoginForm>
-                    <Name>
-                        <label htmlFor="email">Email Address</label>
-                        <input
-                            id='email'
-                            type='email'
-                            value={email}
-                            onChange={(e) => setEmail(e.target.value)}
-                        />
-                    </Name>
-                    <Password>
-                        <label htmlFor="password">Password</label>
-                        <input
-                            id='password'
-                            type='password'
-                            value={password}
-                            onChange={(e) => setPassword(e.target.value)}
-                        />
-                    </Password>
-                    <ButtonPrimary name='Sign In' type='submit' onClick={signIn}>Sign In</ButtonPrimary>
-                </LoginForm>
-                <LoginDivider>
-                    <hr/>
-                    <span>OR</span>
-                    <hr/>
-                </LoginDivider>
-                <Link to='/signup'>
-                    <ButtonSecondary name='Create Account'>Sign In</ButtonSecondary>
-                </Link>
-            </Info>
-        </LoginWrapper>
-    )
+		auth.signInWithEmailAndPassword(email, password)
+			.then((userAuth) => {
+				dispatch(login({
+						email: userAuth.user.email,
+						uid: userAuth.user.uid,
+						displayName: userAuth.user.displayName
+					})
+				)
+				history.push('/')
+			}).catch((error) => alert(error.message))
+	}
+
+	return (
+		<LoginWrapper>
+			<Info>
+				<h1>Sign In</h1>
+				<LoginForm>
+					<InputGroup>
+						<label htmlFor="email">Email Address</label>
+						<Input
+							id='email'
+							type='email'
+							value={email}
+							onChange={(e) => setEmail(e.target.value)}
+						/>
+					</InputGroup>
+					<InputGroup>
+						<label htmlFor="password">Password</label>
+						<Input
+							id='password'
+							type='password'
+							value={password}
+							onChange={(e) => setPassword(e.target.value)}
+						/>
+					</InputGroup>
+					<PrimaryButton
+						name='Sign In'
+						type='submit'
+						onClick={signIn}
+						margin='20px 0 10px'
+					/>
+				</LoginForm>
+				<LoginDivider>
+					<hr/>
+					<span>OR</span>
+					<hr/>
+				</LoginDivider>
+				<PrimaryButton
+					onClick={handleClick}
+					name='Create Account'
+					margin='10px 0 10px'
+				/>
+			</Info>
+		</LoginWrapper>
+	)
 }
 
 export default Login

@@ -39,20 +39,20 @@ const StyledButtonSecondary = styled.button`
   }
 `
 
-export const ButtonPrimary = ({name, type, onClick, margin, color, padding}) => {
-    return (
-        <StyledButtonPrimary onClick={onClick} padding={padding} type={type} margin={margin} color={color}>
-            {name}
-        </StyledButtonPrimary>
-    )
+export const ButtonPrimary = ({ name, type, onClick, margin, color, padding }) => {
+	return (
+		<StyledButtonPrimary onClick={onClick} padding={padding} type={type} margin={margin} color={color}>
+			{name}
+		</StyledButtonPrimary>
+	)
 }
 
-export const ButtonSecondary = ({name, type, onClick}) => {
-    return (
-        <StyledButtonSecondary onClick={onClick} type={type}>
-            {name}
-        </StyledButtonSecondary>
-    )
+export const ButtonSecondary = ({ name, type, onClick }) => {
+	return (
+		<StyledButtonSecondary onClick={onClick} type={type}>
+			{name}
+		</StyledButtonSecondary>
+	)
 }
 
 

@@ -4,7 +4,8 @@ import {useSelector} from 'react-redux'
 import styled from 'styled-components'
 import {Power3, TweenLite, TweenMax} from 'gsap'
 import {selectProduct} from '../../features/productSlice'
-import {ButtonPrimary} from '../Buttons/ButtonPrimary'
+import {PrimaryButton} from '../Buttons/MainButton'
+import {DarkButton} from "../Buttons/MainButton";
 
 //import Preloader from '../components/preloader'
 // https://github.com/wrongakram/GSAP-Hero-Animation/blob/master/src/App.js
@@ -13,7 +14,7 @@ import {ButtonPrimary} from '../Buttons/ButtonPrimary'
 const Container = styled.section`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 20px;
+  gap: 30px;
   margin: 50px 0;
 `
 
@@ -22,8 +23,10 @@ const Card = styled.div`
   padding: 20px 40px 40px;
   text-align: center;
   overflow: hidden;
+  background-color: #fff;
   border-radius: 20px;
-  border: 1px solid #c3c3c3;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+
 
   :before {
     content: '';
@@ -36,7 +39,12 @@ const Card = styled.div`
     clip-path: circle(150px at 80% 20%);
     transition: 0.5s ease-in-out;
   }
-
+  
+  &:hover {
+    box-shadow: 0 15px 20px rgba(57,56,56,0.5);
+    transition: all 0.5s ease 0s;
+  }
+  
   &:hover:before {
     clip-path: circle(250px at 80% 20%);
   }
@@ -66,19 +74,21 @@ const Desc = styled.p`
   margin-top: 20px;
 `
 
-const ProductCard = ({ product }) => {
+const ProductCard = ({product}) => {
 
     let productItem = useRef(null)
 
     useEffect(() => {
-        TweenMax.from(productItem, 2, { opacity: 0, y: 100, ease: Power3.easeOut })
+        TweenMax.from(productItem, 2, {opacity: 0, y: 100, ease: Power3.easeOut})
     }, [product])
 
     return (
-        <Card ref={el => { productItem = el }}>
+        <Card ref={el => {
+            productItem = el
+        }}>
             <Product>
                 <Link to={product.link}>
-                    <Image src={product.image} alt={product.name} />
+                    <Image src={product.image} alt={product.name}/>
                 </Link>
                 <Text>
                     <Link to={`/production/${product.nameEn}`}>
@@ -88,9 +98,10 @@ const ProductCard = ({ product }) => {
                 </Text>
             </Product>
             <Link to={product.link}>
-                <ButtonPrimary margin='50px' name='Подробнее'>
-                    {product.name}
-                </ButtonPrimary>
+                <PrimaryButton
+                    name={product.name}
+                    margin='30px 0 15px'
+                />
             </Link>
         </Card>
     )
@@ -108,7 +119,7 @@ const ItemList = () => {
         <Container>
             {items}
         </Container>
-        )
+    )
 }
 
 export default ItemList

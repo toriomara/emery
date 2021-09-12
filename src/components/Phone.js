@@ -1,20 +1,36 @@
 import React from 'react'
 import styled from 'styled-components'
-import {NavLink} from "react-router-dom";
+import {NavLink} from 'react-router-dom'
 
 const StyledPhone = styled.div`
+  position: relative;
   display: flex;
-  color: #393c41;
-  padding: 0 10px;
-  & a {
-    color: black;
+  align-items: center;
+  margin: 0 10px 0 0;
+  font-family: inherit;
+  
+  a {
+    text-decoration: none;
+    color: var(--red);
+    line-height: 1.5;
+    
+    :hover {
+      transform: scale(1.05);
+      transition: .3s ease;  
+    }
   }
+  
+   @media screen and (max-width: 1550px) {
+     font-size: 18px; 
+      
+   @media screen and (max-width: 1501px) {
+     font-size: 17px;
 `
 
 const Phone = () => {
     return (
         <StyledPhone>
-            <a href='tel:+78002347878'><span>8 800 234-78-78</span></a>
+            <a href='tel:+78002347878'>8 800 234-78-78</a>
         </StyledPhone>
     )
 }

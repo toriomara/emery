@@ -4,50 +4,83 @@ import Footer from '../components/Template/Footer/Footer'
 import Header from '../components/Template/Header/Header'
 import styled from 'styled-components'
 import { useHistory } from 'react-router-dom'
-import {ButtonPrimary} from '../components/Buttons/ButtonPrimary'
+import { PrimaryButton, SecondaryButton } from '../components/Buttons/MainButton'
+import { auth } from '../components/firebase'
+import { logout } from '../features/userSlice'
+import { useDispatch } from 'react-redux'
 
 const Wrapper = styled.div`
-  display: flex;
+  display: grid;
+  width: 100%;
+  margin: 0;
   flex-direction: column;
   min-height: 100vh
 `
 
-const Main = ({children}) => {
+const ButtonBlock = styled.div`
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  flex-direction: column;
+`
 
-    const history = useHistory()
+const Main = ({ children }) => {
+	const dispatch = useDispatch()
+	const history = useHistory()
 
-    function handleClick() {
-        history.push('/')
-    }
+	function handleClick () {
+		history.push('/')
+	}
 
-    return (
-        <Wrapper>
-            <Header/>
-            <ButtonPrimary margin='0px' name='Главная' onClick={handleClick}/>
-            <div id="main">
-                {children}
-            </div>
-            {/*{props.fullPage ? null : <SideBar/>}*/}
-            <Footer/>
-        </Wrapper>
-    )
+	function account () {
+		history.push('/account')
+	}
+
+	const logoutOfApp = () => {
+		auth
+			.signOut()
+			.then(() => {
+				dispatch(logout())
+				history.push('/')
+			})
+			.catch((error) => alert(error.message))
+	}
+
+	return (
+		<Wrapper>
+			<Header/>
+			<ButtonBlock>
+				{/*    <LightButton margin='10px 10px 10px 0' name='Главная' onClick={handleClick}/>
+                <DarkButton margin='10px 10px 10px 0' name='Выход' onClick={logoutOfApp}/>
+                <DarkButton margin='10px 10px 10px 0' name='Аккаунт' onClick={account}/>*/}
+
+				<SecondaryButton name='Главная' onClick={handleClick}/>
+				<PrimaryButton name='Выход' onClick={logoutOfApp}/>
+				<PrimaryButton name='Аккаунт' onClick={account}/>
+			</ButtonBlock>
+			<div id='main'>
+				{children}
+			</div>
+			{/*{props.fullPage ? null : <SideBar/>}*/}
+			<Footer/>
+		</Wrapper>
+	)
 }
 
 Main.propTypes = {
-    children: PropTypes.oneOfType([
-        PropTypes.arrayOf(PropTypes.node),
-        PropTypes.node,
-    ]),
-    fullPage: PropTypes.bool,
-    title: PropTypes.string,
-    description: PropTypes.string,
+	children: PropTypes.oneOfType([
+		PropTypes.arrayOf(PropTypes.node),
+		PropTypes.node,
+	]),
+	fullPage: PropTypes.bool,
+	title: PropTypes.string,
+	description: PropTypes.string,
 }
 
 Main.defaultProps = {
-    children: null,
-    fullPage: false,
-    title: null,
-    description: "Korund",
+	children: null,
+	fullPage: false,
+	title: null,
+	description: 'Korund',
 }
 
 export default Main

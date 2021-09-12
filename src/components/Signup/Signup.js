@@ -1,11 +1,13 @@
 import React, {useState} from 'react'
 import {Link, useHistory} from 'react-router-dom'
-import {ButtonPrimary, ButtonSecondary} from '../Buttons/ButtonPrimary'
 import {useDispatch} from 'react-redux'
-import {Info, LoginForm, Name, Password, LoginDivider} from '../Login/Login'
+import {Info, LoginForm, Name, InputGroup, Password, LoginDivider} from '../Login/Login'
 import {auth} from '../firebase'
 import {login} from '../../features/userSlice'
 import {LoginWrapper} from '../Login/Login'
+import {PrimaryButton, SecondaryButton} from '../Buttons/MainButton'
+import { Input } from '../Template/Footer/Input'
+
 
 const Signup = () => {
     const [email, setEmail] = useState('')
@@ -13,7 +15,12 @@ const Signup = () => {
     const [fName, setFName] = useState('')
     const [lName, setLName] = useState('')
     const dispatch = useDispatch()
+
     const history = useHistory()
+
+    function handleClick() {
+        history.push('/login')
+    }
 
     const signUp = (e) => {
         e.preventDefault()
@@ -44,9 +51,9 @@ const Signup = () => {
             <Info>
                 <h1>Create Account</h1>
                 <LoginForm>
-                    <Name>
+                    <InputGroup>
                         <label htmlFor="fName">First Name</label>
-                        <input
+                        <Input
                             id='fName'
                             type='text'
                             value={fName}
@@ -54,40 +61,47 @@ const Signup = () => {
                         />
 
                         <label htmlFor='lName'>Last Name</label>
-                        <input
+                        <Input
                             id='lName'
                             type='text'
                             value={lName}
                             onChange={(e) => setLName(e.target.value)}
                         />
+                    </InputGroup>
+                    <InputGroup>
 
                         <label htmlFor="email">Email Address</label>
-                        <input
+                        <Input
                             id='email'
                             type='email'
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
                         />
-                    </Name>
-                    <Password>
                         <label htmlFor="password">Password</label>
-                        <input
+                        <Input
                             id='password'
                             type='password'
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
                         />
-                    </Password>
-                    <ButtonPrimary name='Create Account' type='submit' onClick={signUp}/>
+                    </InputGroup>
+                    <PrimaryButton
+                        name='Create Account'
+                        type='submit'
+                        margin='20px 0 10px'
+                        onClick={signUp}/>
                 </LoginForm>
                 <LoginDivider>
                     <hr/>
                     <span>OR</span>
                     <hr/>
                 </LoginDivider>
-                <Link to='/login'>
-                    <ButtonSecondary name='sign in'>Sign In</ButtonSecondary>
-                </Link> </Info>
+                    <PrimaryButton
+                        name='Sign in'
+                        margin='10px 0 10px'
+                        onClick={handleClick}
+                    />
+                </Info>
         </LoginWrapper>
     )
 }

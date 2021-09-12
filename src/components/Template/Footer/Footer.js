@@ -3,11 +3,11 @@ import styled from 'styled-components'
 import ContactIcons from '../../Contacts/ContactIcons'
 import Logo from '../../Logo'
 import {Link} from 'react-router-dom'
-import {Icon} from '../../Contacts/ContactsIcons.element'
 import {selectCompany, selectContacts, selectInfo} from '../../../features/footerSlice'
 import {useSelector} from 'react-redux'
 import NewsLetter from './NewsLetter'
 import Answer from './Answer'
+import {OutlinedButton, PrimaryButton} from '../../Buttons/MainButton'
 //import {DataProvider} from './DataContext'
 
 const FooterWrapper = styled.div`
@@ -32,15 +32,6 @@ const DownFooter = styled.div`
   align-items: center;
 `
 
-const IconFooter = styled(Icon)`
-  display: inline-block;
-  font-size: 14px;
-  margin: 5px 10px 5px 0;
-  color: black;
-
-  ${Icon}
-`
-
 export const Desc = styled.div`
   margin-top: 20px;
   font-size: 18px;
@@ -51,26 +42,6 @@ export const Desc = styled.div`
   & span {
     margin-top: 20px;
     display: flex;
-  }
-`
-
-const ButtonFooter = styled.button`
-  background-color: transparent;
-  border: 3px solid #343239;
-  width: 160px;
-  margin-top: 20px;
-  padding: 7px 12px;
-  border-radius: 0.5rem;
-  text-transform: uppercase;
-  color: #171a20;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all .2s ease-in-out;
-  outline: none;
-
-  &:hover {
-    background-color: #343239;
-    color: #fbf9fb;
   }
 `
 
@@ -92,8 +63,7 @@ export const ItemContent = styled.ul`
   & Link {
     line-height: 1.4;
     text-decoration: none;
-      color: var(--dark);
-
+    color: var(--dark);
   }
 `
 
@@ -116,7 +86,7 @@ const Footer = () => {
                     <Logo/>
                     <Desc>
                         Производство сверхтонких теплоизоляционных материалов нового поколения
-                        <span>НПО "Фулерен", 2021</span>
+                        <span>© НПО "Фулерен", 2021</span>
                     </Desc>
                 </Item>
                 <Item>
@@ -154,7 +124,6 @@ const Footer = () => {
                     <ItemContent>
                         {contacts.filter((l) => !l.index).map((l) => (
                             <li key={l.label}>
-                                <IconFooter>{l.icon}</IconFooter>
                                 <Link to={l.path}>{l.label}</Link>
                             </li>
                         ))}
@@ -167,11 +136,10 @@ const Footer = () => {
                     <Desc>
                         Ответим на все ваши вопросы
                     </Desc>
-                    <ButtonFooter
+                    <OutlinedButton
+                        name='ВОПРОС'
                         onClick={handleClick}
-                        type="button">
-                        Задать вопрос
-                    </ButtonFooter>
+                        />
 
                     {
                         modalOpen &&
@@ -186,7 +154,7 @@ const Footer = () => {
                 <ContactIcons/>
             </DownFooter>
         </FooterWrapper>
-    );
-};
+    )
+}
 
 export default Footer

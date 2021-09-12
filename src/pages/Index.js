@@ -1,6 +1,7 @@
 import React from 'react'
 import Main from '../layouts/Main'
 import styled from 'styled-components'
+import {LightButton} from '../components/Buttons/MainButton'
 import Clock from '../components/currentTime'
 
 const Header = styled.h1`

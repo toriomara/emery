@@ -16,7 +16,7 @@ const Header = ({history}) => {
     const [state, setState] = useState({
         initial: false,
         clicked: null,
-        menuName: <FaBars/>,
+        menuName: <FaBars/>
     })
 
     // State of button
@@ -44,26 +44,26 @@ const Header = ({history}) => {
                 initial: null,
                 clicked: true,
                 menuName: <FaTimes/>
-            });
+            })
         } else if (state.clicked === true) {
             setState({
                 clicked: !state.clicked,
                 menuName: <FaBars/>
-            });
+            })
         } else if (state.clicked === false) {
             setState({
                 clicked: !state.clicked,
                 menuName: <FaTimes/>
-            });
+            })
         }
-    };
+    }
 
     //Determine if out menu button should be disabled
     const disableMenu = () => {
         setDisabled(!disabled);
         setTimeout(() => {
-            setDisabled(false);
-        }, 1200);
+            setDisabled(false)
+        }, 1200)
     }
 
     const routesNavi = useSelector(selectRoutes)
@@ -73,9 +73,9 @@ const Header = ({history}) => {
             <Logo/>
             <Menu>
                 {routesNavi.filter((l) => !l.index).map((l) => (
-                    <li key={l.label}>
+                    <nav key={l.label}>
                         <NavLink exact to={l.path}>{l.label}</NavLink>
-                    </li>
+                    </nav>
                 ))}
             </Menu>
             <RightMenu>

@@ -3,7 +3,6 @@ import styled from 'styled-components'
 import {Link, useHistory} from 'react-router-dom'
 import {logout, selectUser} from '../../features/userSlice'
 import {useDispatch, useSelector} from 'react-redux'
-//import Car from '../Car/Car'
 import {auth} from '../firebase'
 import {ContentContainer} from '../globalStyles'
 import Main from '../../layouts/Main'
@@ -58,11 +57,12 @@ const Account = (/*{isMenuOpen, setIsMenuOpen}*/) => {
             })
             .catch((error) => alert(error.message))
     }
+
     return (
         <Main>
             <Info>
                 <Person>
-                    <h4>{user?.displayName + "'s Tesla"}</h4>
+                    <h4>{user?.displayName + "'s account"}</h4>
                 </Person>
                 <InnerMenu>
                     <Link to='/'>Home</Link>

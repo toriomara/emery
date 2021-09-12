@@ -1,7 +1,9 @@
-import React, {useState} from 'react'
-import styled, {css} from 'styled-components'
-import {AiOutlineClose} from 'react-icons/ai'
+import React, { useState } from 'react'
+import styled, { css } from 'styled-components'
+import { FaTimes } from 'react-icons/fa'
 import img from '../../../img/email.web'
+import { Input } from './Input'
+import { PrimaryButton } from '../../Buttons/MainButton'
 
 const SharedStyles = css`
   background-color: #fff;
@@ -71,37 +73,39 @@ const Img = styled.div`
 `
 
 const ContentText = styled.div`
-    display: grid;
-    grid-area: contentText;
-    margin: 10px;
-    justify-content: center;
-    color: #1A2250;
+  display: grid;
+  grid-area: contentText;
+  margin: 10px;
+  justify-content: center;
+  align-items: center;
+  color: #1A2250;
 `
 
 const Title = styled.h2`
-    color: #1A2250;
-    text-align: center;
-    grid-area: title;
-    font-size: 1.5rem;
+  color: #1A2250;
+  text-align: center;
+  grid-area: title;
+  font-size: 1.5rem;
 `
 
 const Text = styled.h3`
-    text-align: center;
-    font-size: 18px;
+  text-align: center;
+  font-size: 18px;
 `
 
 const Bullet = styled.ul`
-    font-size: 14px;
-    margin: 20px 0 20px;
+  font-size: 14px;
+  margin: 20px 0 20px;
 `
 
 const BulletItem = styled.li`
-    margin: 5px 0;
-    line-height: 1.1;
-    font-size: 14px;
+  margin: 5px 0;
+  line-height: 1.1;
+  font-size: 14px;
 `
 
 const StyledForm = styled.form`
+  display: grid;
   justify-content: center;
   align-items: center;
 `
@@ -118,49 +122,30 @@ const StyledLabel = styled.label`
 `
 
 const StyledInput = styled.input`
-      display: block;
-      width: 100%;
-      height: 100%;
-      margin-bottom: 20px;
-      border: 2px solid #DADDEC;
-      font-size: 1rem;
-      color: #656880;
-      align-self: center;
-      transition: 0.3s;
-      
-        &:focus {
-          border: 2px #222222 solid;
-          box-shadow: 0 10px 36px rgba(0,0,0,.15);
-        }
-        ${SharedStyles}
-`
-
-const AnswerButton = styled.button`
-      display: grid;
-      width: 100%;
-      color: white;
-      font-size: 1rem;
-      cursor: pointer;
-      padding: 7px 12px;
-      border-radius: 3px;
-      box-shadow: 0 5px 20px #89caff94;
-      transition: box-shadow .3s ease-in-out;
-      background-image: linear-gradient(to right, #f8a2a0, #f10606);
-      
-      ${SharedStyles}
-
-    &:hover, 
-    &:focus {
-      box-shadow: none;
-    }
+  display: block;
+  width: 100%;
+  height: 100%;
+  margin-bottom: 20px;
+  border: 2px solid #DADDEC;
+  font-size: 1rem;
+  color: #656880;
+  align-self: center;
+  transition: 0.3s;
+  
+  &:focus {
+    border: 2px #222222 solid;
+    box-shadow: 0 10px 36px rgba(0, 0, 0, .15);
+  }
+  
+  ${SharedStyles}
 `
 
 const TextDown = styled.span`
-      display: block;
-      text-align: center;
-      margin: 20px 0 0;
-      color: #abaebb;
-      font-size: 13px;
+  display: block;
+  text-align: center;
+  margin: 20px 0 0;
+  color: #abaebb;
+  font-size: 13px;
 `
 
 const StyledError = styled.div`
@@ -171,90 +156,90 @@ const StyledError = styled.div`
 `
 
 const initialState = {
-    Имя: '',
-    Email: '',
+	Имя: '',
+	Email: '',
 }
 
-const NewsLetterPopUp = ({setOpenModal}) => {
+const NewsLetterPopUp = ({ setOpenModal }) => {
 
-    const [state, setState] = useState(initialState)
-    const [error, setError] = useState('')
+	const [state, setState] = useState(initialState)
+	const [error, setError] = useState('')
 
-    const handleSubmit = e => {
-        e.preventDefault()
-        //console.log('submitted!');
-        //console.log(state);
+	const handleSubmit = e => {
+		e.preventDefault()
+		//console.log('submitted!');
+		//console.log(state);
 
-        for (let key in state) {
-            if (state[key] === '') {
-                setError(`Пожалуйста, заполните поле ${key}`)
-                return
-            }
-        }
-        setError('')
-        // const regex = /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
-        // const test = regex.test(state.email);
-        // console.log(test);
-        console.log("Succeeded!!!")
-    }
+		for (let key in state) {
+			if (state[key] === '') {
+				setError(`Пожалуйста, заполните поле ${key}`)
+				return
+			}
+		}
+		setError('')
+		// const regex = /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
+		// const test = regex.test(state.email);
+		// console.log(test);
+		console.log('Succeeded!!!')
+	}
 
-    const handleInput = e => {
-        const inputName = e.currentTarget.name
-        const value = e.currentTarget.value
-        setState(prev => ({...prev, [inputName]: value}))
-    }
+	const handleInput = e => {
+		const inputName = e.currentTarget.name
+		const value = e.currentTarget.value
+		setState(prev => ({ ...prev, [inputName]: value }))
+	}
 
-    return (
-        <PopupWindow>
-            <PopupContent>
-                <Icon>
-                    <AiOutlineClose
-                        name='Close'
-                        onClick={() => {
-                            setOpenModal(!setOpenModal)
-                        }}/>
-                </Icon>
-                <Title>Хотите получать новости?</Title>
-                <Img/>
-                <ContentText>
-                    <Text>Подпишитесь на еженедельную новостную рассылку</Text>
-                    <Bullet>
-                        <BulletItem>
-                            Присылаем только одно письмо в неделю
-                        </BulletItem>
-                        <BulletItem>
-                            Не передаём ваши данные третьим лицам
-                        </BulletItem>
-                    </Bullet>
-                    <StyledForm onSubmit={handleSubmit}>
-                        <FormGroup>
-                            <StyledLabel htmlFor="Имя">Имя</StyledLabel>
-                            <StyledInput
-                                type="text"
-                                name="Имя"
-                                value={state.name}
-                                onChange={handleInput}/>
-                        </FormGroup>
-                        <FormGroup>
-                            <StyledLabel htmlFor="email">Email</StyledLabel>
-                            <StyledInput
-                                type="email"
-                                name="email"
-                                value={state.email}
-                                onChange={handleInput}/>
-                        </FormGroup>
-                        {error && (
-                            <StyledError>
-                                <p>{error}</p>
-                            </StyledError>
-                        )}
-                        <AnswerButton type="submit">Подписаться</AnswerButton>
-                    </StyledForm>
-                    <TextDown>Мы не рассылаем спам</TextDown>
-                </ContentText>
-            </PopupContent>
-        </PopupWindow>
-    )
+	return (
+		<PopupWindow>
+			<PopupContent>
+				<Icon>
+					<FaTimes
+						name='Close'
+						onClick={() => {
+							setOpenModal(!setOpenModal)
+						}}/>
+				</Icon>
+				<Title>Хотите получать новости?</Title>
+				<Img/>
+				<ContentText>
+					<Text>Подпишитесь на еженедельную новостную рассылку</Text>
+					<Bullet>
+						<BulletItem>
+							Присылаем только одно письмо в неделю
+						</BulletItem>
+						<BulletItem>
+							Не передаём ваши данные третьим лицам
+						</BulletItem>
+					</Bullet>
+					<StyledForm onSubmit={handleSubmit}>
+						<FormGroup>
+							<StyledLabel htmlFor="Имя">Имя</StyledLabel>
+							<Input
+								type="text"
+								name="Имя"
+								value={state.name}
+								onChange={handleInput}/>
+						</FormGroup>
+						<FormGroup>
+							<StyledLabel htmlFor="email">Email</StyledLabel>
+							<Input
+								type="email"
+								name="email"
+								value={state.email}
+								onChange={handleInput}/>
+						</FormGroup>
+						{error && (
+							<StyledError>
+								<p>{error}</p>
+							</StyledError>
+						)}
+						<PrimaryButton margin='0' type="submit" name='Подписаться'>Подписаться</PrimaryButton>
+					</StyledForm>
+					<TextDown>Мы не рассылаем спам</TextDown>
+				</ContentText>
+			</PopupContent>
+		</PopupWindow>
+	)
 }
 
 export default NewsLetterPopUp

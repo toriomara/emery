@@ -1,6 +1,6 @@
 import React from 'react'
 import styled, {css} from 'styled-components'
-import {AiOutlineClose} from 'react-icons/ai'
+import {FaTimes} from 'react-icons/fa'
 import {useForm} from 'react-hook-form'
 import * as yup from 'yup'
 import {yupResolver} from '@hookform/resolvers/yup'
@@ -182,7 +182,7 @@ const Answer = ({setOpenModal}) => {
         <PopupWindow>
             <PopupContent>
                 <Icon>
-                    <AiOutlineClose
+                    <FaTimes
                         name='Close'
                         onClick={() => {
                             setOpenModal(!setOpenModal)

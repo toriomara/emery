@@ -1,17 +1,13 @@
-import React, {useEffect, useRef, useState} from 'react'
-import {Link} from 'react-router-dom'
-import {useSelector} from 'react-redux'
+import React, { useEffect, useRef } from 'react'
+import { Link, useParams } from 'react-router-dom'
+import { useSelector } from 'react-redux'
 import styled from 'styled-components'
-import {Power3, TweenLite, TweenMax} from 'gsap'
-import {selectProduct} from '../../features/productSlice'
-import {ButtonPrimary} from '../Buttons/ButtonPrimary'
-
-import {useParams} from 'react-router-dom'
-
+import { Power3, TweenMax } from 'gsap'
+import { selectProduct } from '../../features/productSlice'
+import { PrimaryButton } from '../Buttons/MainButton'
 
 //import Preloader from '../components/preloader'
 // https://github.com/wrongakram/GSAP-Hero-Animation/blob/master/src/App.js
-
 
 const Container = styled.section`
   display: grid;
@@ -72,40 +68,40 @@ const Desc = styled.p`
 
 const DocList = () => {
 
-    const {name} = useParams
+	const { name } = useParams
 
-    const product = useSelector(selectProduct)
+	const product = useSelector(selectProduct)
 
-    let productItem = useRef(null)
+	let productItem = useRef(null)
 
-    useEffect(() => {
-        TweenMax.from(productItem, 2, {opacity: 0, y: 100, ease: Power3.easeOut})
-    }, [product])
+	useEffect(() => {
+		TweenMax.from(productItem, 2, { opacity: 0, y: 100, ease: Power3.easeOut })
+	}, [product])
 
-    const items = product.map((l, id) => (
-        <Card key={id} ref={el => {productItem = el}}>
-            <Product>
-                <Link to={l.link}>
-                    <Image src={l.image} alt={l.name}/>
-                </Link>
-                <Text>
-                    <Link to={`/production/${name}`}>
-                        <Title>{l.name}</Title>
-                    </Link>
-                    <Desc>{l.desc}</Desc>
-                </Text>
-            </Product>
-            <Link to={l.link}>
-                <ButtonPrimary margin='50px' name={l.name}/>
-            </Link>
-        </Card>
-    ))
+	const items = product.map((l, id) => (
+		<Card key={id} ref={el => {productItem = el}}>
+			<Product>
+				<Link to={l.link}>
+					<Image src={l.image} alt={l.name}/>
+				</Link>
+				<Text>
+					<Link to={`/production/${name}`}>
+						<Title>{l.name}</Title>
+					</Link>
+					<Desc>{l.desc}</Desc>
+				</Text>
+			</Product>
+			<Link to={l.link}>
+				<PrimaryButton margin='50px' name={l.name}/>
+			</Link>
+		</Card>
+	))
 
-    return (
-        <Container>
-            {items}
-        </Container>
-    )
+	return (
+		<Container>
+			{items}
+		</Container>
+	)
 }
 
 export default DocList

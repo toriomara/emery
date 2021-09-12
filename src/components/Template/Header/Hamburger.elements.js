@@ -1,65 +1,93 @@
-import styled, {keyframes} from 'styled-components'
+import styled, { keyframes } from 'styled-components'
 
 export const NavigationsWrapper = styled.div`
-  display: flex;
-  //padding: 15px 0;
+  display: grid;
+  grid-template-areas: 'logo menu rightMenu';
+  grid-template-columns: min-content auto max-content;
   height: 60px;
-  //margin: 10px 0;
+  //width: 100%;
   align-items: center;
-  justify-content: space-between;
-  border-bottom: 1px solid #afb0b1;
-  margin-bottom: 30px;
+  margin: 0 0 30px 0;
 `
 
-export const Menu = styled.ul`
-  display: flex;
-
-  li {
-    display: inline-block;
-    border-left: solid 1px grey;
-    line-height: 1;
-    margin-left: 16px;
-    padding-left: 16px;
-     transition: text-shadow .3s;
-
-    &:first-child {
-      border-left: 0;
-      margin-left: 50px;
-      padding-left: 0;
-    }
-
-    a {
-      border-bottom: 0;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      color: #393c41;
-    }
-    
-     :hover {
-        text-shadow: 0 0 .8px #333, 0 0 .8px #333;
-     }
-          
-     .active {
-        text-shadow: 0 0 .8px #333, 0 0 .65px #333;
-     }
+export const Menu = styled.div`
+  display: grid;
+  grid-area: menu;
+  grid-auto-flow: column;
+  grid-auto-columns: max-content;
+  margin: 0 40px 0 40px;
+  gap: 40px;
+  justify-content: end;
   
+  nav {
+  
+      a {
+        position: relative;
+        letter-spacing: 1px;
+        font-weight: 500;
+        text-transform: uppercase;
+        color: var(--dark);
+				transition: opacity .2s ease-in-out, transform .2s ease-in-out;
+        
+        ::after {
+          display: inline-block;
+          position: absolute;
+ 					content: '';
+          width: 100%;
+          left: 0;
+          bottom: -10px;
+          height: 3px;
+          border-radius: 10%;
+          background-color: var(--red);
+          transition: opacity .2s ease-in-out, transform .2s ease-in-out;
+          transform-origin: bottom;
+					transform: scaleX(0);
+        }
+        
+        :hover::after {
+		      transform: scaleX(1);
+				}
+        
+        :hover {
+        	color: var(--red);
+        }
+      }
+      
+      .active {
+      	position: relative;
+      	color: var(--red);
+      	outline: none;
+      	
+      	::after {
+					transform: scaleX(1);
+        }
+    	}  
   }
 
+  @media screen and (max-width: 1375px) {
+    gap: 35px;
+  }
+  
+  @media screen and (max-width: 1350px) {
+  	a {font-weight: 400;}
+
+  }
+    
   @media screen and (max-width: 960px) {
     display: none;
+  }
 `
 
 export const RightMenu = styled.div`
-  display: flex;
-  grid-template-columns: repeat(auto-fit, minmax(20px, 1fr));
-
-  //grid-template-columns: repeat(4, 1fr);
-  //grid-template-areas: 'search lang phone';
-  z-index: 10;
+  display: inline-flex;
+  grid-area: rightMenu;
+  grid-template-columns: min-content auto max-content;
+  margin: 0 0 0 20px;
   align-items: center;
-  font-size: 1.2rem;
+  justify-content: end;
+  font-size: 20px;
   gap: 10px;
-  color: #393c41;
+  color: var(--dark);
 `
 
 export const RedButton = styled.button`
@@ -70,8 +98,7 @@ export const RedButton = styled.button`
   outline: none;
   cursor: pointer;
   z-index: 10;
-  font-size: 1rem;
-  //mix-blend-mode: difference;
+  font-size: 16px;
 
   @media screen and (max-width: 960px) {
     display: flex;

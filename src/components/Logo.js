@@ -5,7 +5,7 @@ import {NavLink} from 'react-router-dom'
 
 
 export const StyledLogo = styled.div`
-  display: inline-block;
+  display: grid;
   background-image: url(${img});
   background-size: contain;
   background-repeat: no-repeat;
