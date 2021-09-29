@@ -1,0 +1,6 @@
+{
+  "app_title": "标题",
+  "language": "语",
+  "welcome_message": "欢迎",
+  "days_since_release": "此应用发布已过去 {{number_of_days}} 天"
+}

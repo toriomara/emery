@@ -42,8 +42,8 @@ const GlobalStyle = createGlobalStyle`
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
     
     color: var(--dark);
-    //background: #f9f9f9;                                                
-    //background: -webkit-linear-gradient(left, #f2f2f2,#eeeeee,#f2f2f2);/* Chrome 10-25, Safari 5.1-6 */                          background: linear-gradient(to right, #f2f2f2,#eeeeee,#f2f2f2);/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */                                               
+    background: #f9f9f9;  
+   //background: -webkit-linear-gradient(left, #f2f2f2,#eeeeee,#f2f2f2);/* Chrome 10-25, Safari 5.1-6 */                          background: linear-gradient(to right, #f2f2f2,#eeeeee,#f2f2f2);/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */                                               
   }
 
   a {

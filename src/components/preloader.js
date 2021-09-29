@@ -21,15 +21,18 @@ const motion = (props) => keyframes`
 const PreloaderSpinner = styled.div`
   display: inline-block;
   position: relative;
+  align-self: center;
   width: ${p => `${p.size}${p.sizeUnit}`};
   height: ${p => `${p.size}${p.sizeUnit}`};
+  
   div {
     position: absolute;
     border: 4px solid ${p => p.color};
     opacity: 1;
     border-radius: 50%;
-    animation: ${p => motion(p)} 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+    animation: ${p => motion(p)} 1.5s cubic-bezier(0, 0.2, 0.8, 1) infinite;
   }
+  
   div:nth-child(2) {
     animation-delay: -0.5s;
   }
@@ -38,13 +41,12 @@ const PreloaderSpinner = styled.div`
 const Preloader = ({ color, size, sizeUnit }) => (
     <PreloaderSpinner color={color} size={size} sizeUnit={sizeUnit}>
         <div />
-        <div />
     </PreloaderSpinner>
 )
 
 Preloader.defaultProps = {
     size: 64,
-    color: '#e20001',
+    color: 'var(--red)',
     sizeUnit: 'px'
 }
 

@@ -171,12 +171,12 @@ const Hamburger = ({ state }) => {
 								{/* Returning the list of cities */}
 								{product.map(el => (
 									<NavLink to={el.link} key={el.name}>
-                                        <span
-	                                        onMouseEnter={() => handleCity(el.imageBG, cityBackground)}
-	                                        onMouseOut={() => handleCityReturn(cityBackground)}
-                                        >
-                                            {el.name}
-                                        </span>
+                    <span
+                      onMouseEnter={() => handleCity(el.imageBG, cityBackground)}
+                      onMouseOut={() => handleCityReturn(cityBackground)}
+                    >
+                        {el.name}
+                    </span>
 									</NavLink>
 								))}
 							</RLocations>

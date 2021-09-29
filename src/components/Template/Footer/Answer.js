@@ -1,10 +1,11 @@
-import React from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import styled, {css} from 'styled-components'
 import {FaTimes} from 'react-icons/fa'
 import {useForm} from 'react-hook-form'
 import * as yup from 'yup'
 import {yupResolver} from '@hookform/resolvers/yup'
 import {Input} from './Input'
+import { useClickOutside } from '../../../utils/ClickOutside'
 
 //https://github.com/weibenfalk/react-controlled-form/blob/master/src/App.js
 
@@ -146,9 +147,13 @@ const AnswerButton = styled.button`
     }
 `
 
-const Answer = ({setOpenModal}) => {
+const Answer = ({setOpenModal, ref}) => {
 
     /*const {setValues, data} = useData()*/
+
+    const domNode = useClickOutside(() => {
+        setOpenModal(false)
+    })
 
     const schema = yup.object().shape({
         textMessage: yup
@@ -178,15 +183,29 @@ const Answer = ({setOpenModal}) => {
         console.log(data)
     }
 
+    const handleClick = () => {
+        setOpenModal(!setOpenModal)
+    }
+
+/*    const domNode = useClickOutside(() => {
+        setOpenModal(false)
+    })*/
+
+/*    useEffect(() => {
+        console.log(forwardedRef.current, 'answer.js')
+    }, [])
+
+    const domAnswer = useClickOutside(() => {
+        setOpenModal(false)
+    })*/
+
     return (
-        <PopupWindow>
+        <PopupWindow ref={domNode}>
             <PopupContent>
                 <Icon>
                     <FaTimes
                         name='Close'
-                        onClick={() => {
-                            setOpenModal(!setOpenModal)
-                        }}
+                        onClick={handleClick}
                     />
                 </Icon>
                 <Title>Остались вопросы?</Title>

@@ -1,14 +1,18 @@
-import React, {useState} from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import styled from 'styled-components'
 import ContactIcons from '../../Contacts/ContactIcons'
 import Logo from '../../Logo'
-import {Link} from 'react-router-dom'
-import {selectCompany, selectContacts, selectInfo} from '../../../features/footerSlice'
-import {useSelector} from 'react-redux'
+import { Link } from 'react-router-dom'
 import NewsLetter from './NewsLetter'
 import Answer from './Answer'
-import {OutlinedButton, PrimaryButton} from '../../Buttons/MainButton'
+import { OutlinedButton } from '../../Buttons/MainButton'
+import { useClickOutside } from '../../../utils/ClickOutside'
 //import {DataProvider} from './DataContext'
+
+import {AiOutlineMail} from 'react-icons/ai'
+import {GoLocation} from 'react-icons/go'
+import {IoIosPhonePortrait} from 'react-icons/io'
+import {FiPhone} from 'react-icons/fi'
 
 const FooterWrapper = styled.div`
   margin-top: auto;
@@ -69,92 +73,97 @@ export const ItemContent = styled.ul`
 
 const Footer = () => {
 
-    const company = useSelector(selectCompany)
-    const info = useSelector(selectInfo)
-    const contacts = useSelector(selectContacts)
+	const [modalOpen, setModalOpen] = useState(false)
+	const handleClick = () => {
+		setModalOpen(!modalOpen)
+	}
 
-    const [modalOpen, setModalOpen] = useState(false)
-    const handleClick = () => {
-        setModalOpen(!modalOpen)
-    }
+	const domNode = useClickOutside(() => {
+		setModalOpen(false)
+	})
 
-    return (
-        <FooterWrapper>
-            <NewsLetter/>
-            <MiddleFooter>
-                <Item>
-                    <Logo/>
-                    <Desc>
-                        Производство сверхтонких теплоизоляционных материалов нового поколения
-                        <span>© НПО "Фулерен", 2021</span>
-                    </Desc>
-                </Item>
-                <Item>
-                    <ItemTitle>
-                        Компания
-                    </ItemTitle>
-                    <ItemContent>
-                        <Link to='/about'>О нас</Link>
-                        <Link to='/about'>Для прессы</Link>
-                        <Link to='/about'>Новости</Link>
-                        <Link to='/about'>Дилерам</Link>
-                        <Link to='/about'>Дистрибьюция</Link>
-                    </ItemContent>
-                </Item>
-                <Item>
-                    <ItemTitle>
-                        {info.filter((l) => l.index).map((l) => (
-                            <Link key={l.label} to={l.path}>{l.label}</Link>
-                        ))}
-                    </ItemTitle>
-                    <ItemContent>
-                        {info.filter((l) => !l.index).map((l) => (
-                            <li key={l.label}>
-                                <Link to={l.path}>{l.label}</Link>
-                            </li>
-                        ))}
-                    </ItemContent>
-                </Item>
-                <Item>
-                    <ItemTitle>
-                        {contacts.filter((l) => l.index).map((l) => (
-                            <Link key={l.label} to={l.path}>{l.label}</Link>
-                        ))}
-                    </ItemTitle>
-                    <ItemContent>
-                        {contacts.filter((l) => !l.index).map((l) => (
-                            <li key={l.label}>
-                                <Link to={l.path}>{l.label}</Link>
-                            </li>
-                        ))}
-                    </ItemContent>
-                </Item>
-                <Item>
-                    <ItemTitle>
-                        Обратная связь
-                    </ItemTitle>
-                    <Desc>
-                        Ответим на все ваши вопросы
-                    </Desc>
-                    <OutlinedButton
-                        name='ВОПРОС'
-                        onClick={handleClick}
-                        />
+/*	let childRef = useRef(null)
 
-                    {
-                        modalOpen &&
-                        /*<DataProvider>*/
-                        <Answer setOpenModal={setModalOpen}/>
-                        /*</DataProvider>*/
-                    }
+	useEffect(() => {
+		console.log(childRef.current, 'footer.js')
+	}, [])*/
 
-                </Item>
-            </MiddleFooter>
-            <DownFooter>
-                <ContactIcons/>
-            </DownFooter>
-        </FooterWrapper>
-    )
+	return (
+		<FooterWrapper>
+			<NewsLetter/>
+			<MiddleFooter>
+				<Item>
+					<Logo/>
+					<Desc>
+						Производство сверхтонких теплоизоляционных материалов нового поколения
+						<span>© НПО "Фулерен", 2021</span>
+					</Desc>
+				</Item>
+				<Item>
+					<ItemTitle>
+						Компания
+					</ItemTitle>
+					<ItemContent>
+						<Link to='/about'>О нас</Link>
+						<Link to='/about'>Для прессы</Link>
+						<Link to='/about'>Новости</Link>
+						<Link to='/about'>Дилерам</Link>
+						<Link to='/about'>Дистрибьюция</Link>
+					</ItemContent>
+				</Item>
+				<Item>
+					<ItemTitle>
+						Информация
+					</ItemTitle>
+					<ItemContent>
+						<Link to='/about'>Документация</Link>
+						<Link to='/about'>Поддержка</Link>
+						<Link to='/about'>Условия</Link>
+						<Link to='/about'>Технология</Link>
+						<Link to='/about'>Доставка</Link>
+					</ItemContent>
+				</Item>
+				<Item>
+					<ItemTitle>
+						Контакты
+					</ItemTitle>
+					<ItemContent>
+						<Link to='/about'><GoLocation/>400019, Россия, г. Волгоград, ул. Слесарная, 103</Link>
+						<Link to='/about'><AiOutlineMail/>korund@korund.ru</Link>
+						<Link to='/about'><IoIosPhonePortrait/>+7 988 988-51-11</Link>
+						<Link to='/about'><FiPhone/>+7 (8442) 46-95-86</Link>
+						<Link to='/about'>+7 (8442) 50-40-76</Link>
+						<Link to='/about'>+7 (8442) 41-23-45</Link>
+					</ItemContent>
+				</Item>
+				<Item>
+					<ItemTitle>
+						Обратная связь
+					</ItemTitle>
+					<Desc>
+						Ответим на все ваши вопросы
+					</Desc>
+					<OutlinedButton
+						name='ВОПРОС'
+						onClick={handleClick}
+					/>
+
+					{
+						modalOpen && (
+						/*<DataProvider>*/
+						<Answer setOpenModal={setModalOpen} forwardRef={domNode}
+						/>
+						/*</DataProvider>*/
+						)
+					}
+
+				</Item>
+			</MiddleFooter>
+			<DownFooter>
+				<ContactIcons/>
+			</DownFooter>
+		</FooterWrapper>
+	)
 }
 
 export default Footer

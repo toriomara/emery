@@ -1,0 +1,7 @@
+{
+  "app_title": "Заголовок",
+  "language": "Язык",
+  "welcome_message": "Добро пожаловать",
+  "days_since_release": "Прошло {{number_of_days}} дней с последних изменений",
+  "nav_home": "Главная"
+}

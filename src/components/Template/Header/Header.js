@@ -6,12 +6,13 @@ import {FaBars, FaTimes} from 'react-icons/fa'
 import Logo from '../../Logo'
 import {Menu} from './Hamburger.elements'
 import Search from '../../SearchBar/Search'
-import Language from '../../Language'
+import { LanguageBar } from '../../Language'
 import Phone from '../../Phone'
 import {useSelector} from 'react-redux'
 import {selectRoutes} from '../../../features/routeSlice'
+import { useTranslation } from 'react-i18next'
 
-const Header = ({history}) => {
+const Header = ({label, path, history}) => {
     // State of Menu
     const [state, setState] = useState({
         initial: false,
@@ -66,23 +67,32 @@ const Header = ({history}) => {
         }, 1200)
     }
 
+    const { t } = useTranslation()
+
     const routesNavi = useSelector(selectRoutes)
 
     return (
         <NavigationsWrapper>
             <Logo/>
             <Menu>
-                {routesNavi.filter((l) => !l.index).map((l) => (
+                <nav>
+                    <NavLink to='/'>
+                        {t('nav_home')}
+                    </NavLink>
+                </nav>
+                {routesNavi.map((l) => (
                     <nav key={l.label}>
-                        <NavLink exact to={l.path}>{l.label}</NavLink>
+                        <NavLink exact to={l.path}>{t(l.label)}</NavLink>
                     </nav>
                 ))}
             </Menu>
             <RightMenu>
                 <Search/>
-                <Language/>
+                <LanguageBar/>
                 <Phone/>
-                <RedButton disabled={disabled} onClick={handleMenu}>
+                <RedButton
+                  disabled={disabled}
+                  onClick={handleMenu}>
                     {state.menuName}
                 </RedButton>
             </RightMenu>

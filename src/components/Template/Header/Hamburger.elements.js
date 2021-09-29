@@ -102,6 +102,7 @@ export const RedButton = styled.button`
 
   @media screen and (max-width: 960px) {
     display: flex;
+    margin: 0 15px 0 0;
   }
 `
 
@@ -116,17 +117,16 @@ export const RedHamburgerMenu = styled.div`
   position: fixed;
   height: 100%;
   width: 100%;
+  overflow-y: hidden;
 `
 
 export const RedMenuSecondaryBackgroundColor = styled.div`
-  background: #191919;
+  position: fixed;
   top: 0;
   left: 0;
-  right: 0;
-  bottom: 0;
-  position: fixed;
   height: 100%;
   width: 100%;
+  background: #191919;
   z-index: -1;
 `
 
@@ -134,7 +134,6 @@ export const RedMenuLayer = styled.div`
   position: relative;
   background: #e20001;
   height: 100%;
-  overflow: hidden;
 `
 
 const BackgroundEffect = keyframes`
@@ -156,11 +155,11 @@ const BackgroundEffect = keyframes`
 `
 
 export const RedMenuCityBackground = styled.div`
+  position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  position: absolute;
   height: 100%;
   width: 100%;
   opacity: 0;

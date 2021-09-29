@@ -113,7 +113,7 @@ const Tooltip = styled.div`
    }  
 `
 
-export const Icon = styled.span`
+const Icon = styled.span`
   display: inline-flex;
   font-size: 20px;
     
@@ -144,7 +144,7 @@ const ContactIcons = () => {
 			</IconItem>
 			<IconItem id='instagram'>
 				<Tooltip>Instagram</Tooltip>
-				<a href="#">
+				<a href="https://www.instagram.com">
 					<Icon>
 						<AiFillInstagram/>
 					</Icon>
@@ -152,7 +152,7 @@ const ContactIcons = () => {
 			</IconItem>
 			<IconItem id='youtube'>
 				<Tooltip>Youtube</Tooltip>
-				<a href="#">
+				<a href="https://www.youtube.com">
 					<Icon>
 						<FaYoutube/>
 					</Icon>
