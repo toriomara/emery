@@ -11,18 +11,24 @@ const Wrapper = styled.div`
 const IconItem = styled.div`
   position: relative;
   display: flex;
+  justify-content: center;
   background-color: #ffffff;
-  border-radius: 50%;
+  border-radius: 15%;
   padding: 15px;
   margin: 10px;
   width: 50px;
   height: 50px;
-  justify-content: center;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  //cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  
+  //border: 1px solid rgba(0, 0, 0, .2);
   //align-items: center;
   //flex-direction: column;
-  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
-  cursor: pointer;
-  transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  
+  :hover {
+	  box-shadow: 0 15px 20px rgba(57,56,56,0.4);
+  }
   
   &#facebook:hover {
     background-color: #3b5999;

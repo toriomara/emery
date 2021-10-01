@@ -1,6 +1,21 @@
 {
-  "app_title": "Titel",
-  "language": "Sprache",
-  "welcome_message": "Willkommen",
-  "days_since_release": "es ist {{number_of_days}} Tage her, dass diese App veröffentlicht wurde"
+  "exp": {
+    "app_title": "Titel",
+    "language": "Sprache",
+    "welcome_message": "Willkommen",
+    "days_since_release": "es ist {{number_of_days}} Tage her, dass diese App veröffentlicht wurde"
+  },
+  "main_menu": {
+    "nav_home": "Heim",
+    "nav_production": "Produktion",
+    "nav_documentation": "Dokumentation",
+    "nav_distribution": "Verteilung",
+    "nav_news": "Nachrichten",
+    "nav_contacts": "Kontakte"
+  },
+  "footer": {
+    "footer_news_title": "Was gibt's Neues?",
+    "footer_news_subtitle": "Abonnieren Sie unseren Newsletter und erhalten Sie die neuesten Angebote!",
+    "footer_news_button": "Jetzt abonnieren"
+  }
 }

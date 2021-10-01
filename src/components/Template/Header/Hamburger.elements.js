@@ -10,74 +10,6 @@ export const NavigationsWrapper = styled.div`
   margin: 0 0 30px 0;
 `
 
-export const Menu = styled.div`
-  display: grid;
-  grid-area: menu;
-  grid-auto-flow: column;
-  grid-auto-columns: max-content;
-  margin: 0 40px 0 40px;
-  gap: 40px;
-  justify-content: end;
-  
-  nav {
-  
-      a {
-        position: relative;
-        letter-spacing: 1px;
-        font-weight: 500;
-        text-transform: uppercase;
-        color: var(--dark);
-				transition: opacity .2s ease-in-out, transform .2s ease-in-out;
-        
-        ::after {
-          display: inline-block;
-          position: absolute;
- 					content: '';
-          width: 100%;
-          left: 0;
-          bottom: -10px;
-          height: 3px;
-          border-radius: 10%;
-          background-color: var(--red);
-          transition: opacity .2s ease-in-out, transform .2s ease-in-out;
-          transform-origin: bottom;
-					transform: scaleX(0);
-        }
-        
-        :hover::after {
-		      transform: scaleX(1);
-				}
-        
-        :hover {
-        	color: var(--red);
-        }
-      }
-      
-      .active {
-      	position: relative;
-      	color: var(--red);
-      	outline: none;
-      	
-      	::after {
-					transform: scaleX(1);
-        }
-    	}  
-  }
-
-  @media screen and (max-width: 1375px) {
-    gap: 35px;
-  }
-  
-  @media screen and (max-width: 1350px) {
-  	a {font-weight: 400;}
-
-  }
-    
-  @media screen and (max-width: 960px) {
-    display: none;
-  }
-`
-
 export const RightMenu = styled.div`
   display: inline-flex;
   grid-area: rightMenu;
@@ -85,7 +17,7 @@ export const RightMenu = styled.div`
   margin: 0 0 0 20px;
   align-items: center;
   justify-content: end;
-  font-size: 20px;
+  font-size: 17px;
   gap: 10px;
   color: var(--dark);
 `
@@ -100,7 +32,7 @@ export const RedButton = styled.button`
   z-index: 10;
   font-size: 16px;
 
-  @media screen and (max-width: 960px) {
+  @media screen and (max-width: 1140px) {
     display: flex;
     margin: 0 15px 0 0;
   }

@@ -1,7 +1,26 @@
 {
-  "app_title": "Title",
-  "language": "Language",
-  "welcome_message": "Welcome",
-  "days_since_release": "it's been {{number_of_days}} days since this app was released",
-  "nav_home": "Home"
+  "exp": {
+    "app_title": "Title",
+    "language": "Language",
+    "welcome_message": "Welcome",
+    "days_since_release": "it's been {{number_of_days}} days since this app was released"
+  },
+  "main_menu": {
+    "nav_home": "Home",
+    "nav_production": "Production",
+    "nav_documentation": "Documentation",
+    "nav_distribution": "Distribution",
+    "nav_news": "News",
+    "nav_contacts": "Contacts"
+  },
+  "footer": {
+    "footer_news_title": "What's new?",
+    "footer_news_subtitle": "Subscribe to our newsletter and receive the latest offers!",
+    "footer_news_button": "Submit"
+  },
+  "btn": {
+    "temp_main": "Home",
+    "temp_signOut": "Sign out",
+    "temp_account": "Account"
+  }
 }

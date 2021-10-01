@@ -15,10 +15,10 @@ const Documentation = () => {
     return (
         <Main>
             <h1>Documentation</h1>
-          <p>Вы нажали {count} раз</p>
+         {/* <p>Вы нажали {count} раз</p>
           <button onClick={() => setCount(count + 1)}>
             Нажми на меня
-          </button>
+          </button>*/}
 
             {/*<DocList/>*/}
         </Main>

@@ -5,7 +5,6 @@ import styled from 'styled-components'
 import {Power3, TweenLite, TweenMax} from 'gsap'
 import {selectProduct} from '../../features/productSlice'
 import {PrimaryButton} from '../Buttons/MainButton'
-import {DarkButton} from "../Buttons/MainButton";
 
 //import Preloader from '../components/preloader'
 // https://github.com/wrongakram/GSAP-Hero-Animation/blob/master/src/App.js

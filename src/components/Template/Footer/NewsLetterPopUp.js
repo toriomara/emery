@@ -23,16 +23,16 @@ const PopupWindow = styled.div`
   background: rgba( 0, 0, 0, 0.25 );
   box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
   backdrop-filter: blur( 4px );
-  -webkit-backdrop-filter: blur( 4px );
   border: 1px solid rgba( 255, 255, 255, 0.18 );
   transition: 1s;
+  z-index: 1;
 `
 
 const PopupContent = styled.div`
   position: relative;
   display: grid;
   grid-template-areas: 'title title'
-                        'img contentText';
+                       'img contentText';
   grid-template-rows: 1fr 5fr;
   grid-template-columns: 2fr 3fr;
   background-color: white;

@@ -1,7 +1,26 @@
 {
-  "app_title": "Заголовок",
-  "language": "Язык",
-  "welcome_message": "Добро пожаловать",
-  "days_since_release": "Прошло {{number_of_days}} дней с последних изменений",
-  "nav_home": "Главная"
+  "exp": {
+    "app_title": "Заголовок",
+    "language": "Язык",
+    "welcome_message": "Добро пожаловать",
+    "days_since_release": "Прошло {{number_of_days}} дней с последних изменений"
+  },
+  "main_menu": {
+    "nav_home": "Главная",
+    "nav_production": "Продукция",
+    "nav_documentation": "Документация",
+    "nav_distribution": "Дистрибьюция",
+    "nav_news": "Новости",
+    "nav_contacts": "Контакты"
+  },
+  "footer": {
+    "footer_news_title": "Что нового?",
+    "footer_news_subtitle": "Подпишитесь на нашу рассылку и получайте самые свежие предложения!",
+    "footer_news_button": "Подписаться"
+  },
+  "btn": {
+    "temp_main": "Главная",
+    "temp_signOut": "Выйти",
+    "temp_account": "Профиль"
+  }
 }

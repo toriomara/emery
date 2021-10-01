@@ -2,13 +2,14 @@ import React, {useState} from 'react'
 import styled from 'styled-components'
 import NewsLetterPopUp from './NewsLetterPopUp'
 import {PrimaryButton} from '../../Buttons/MainButton'
-
+import { useTranslation } from 'react-i18next'
 
 const NewsletterContainer = styled.div`
   display: grid;
   align-items: center;
-  padding: 40px 20px;
-  justify-content: center
+  margin: 100px 0;
+  justify-content: center;
+  gap: 15px;
 `
 
 const TextMuted = styled.div`
@@ -17,26 +18,27 @@ const TextMuted = styled.div`
 `
 
 const NewsletterTitle = styled.h5`
-  font-size: 2rem;
+  font-size: 30px;
   justify-self: center;
 `
 
 const NewsLetter = () => {
+  const { t } = useTranslation()
 
-    const [modalOpen, setModalOpen] = useState(false)
+
+  const [modalOpen, setModalOpen] = useState(false)
     const handleClick = () => {setModalOpen(!modalOpen)}
 
     return (
         <NewsletterContainer>
-            <NewsletterTitle>Что нового?</NewsletterTitle>
+            <NewsletterTitle>{t('footer.footer_news_title')}</NewsletterTitle>
             <TextMuted>
-                Подпишитесь на наши новости и получайте свежие предложения!
+              {t('footer.footer_news_subtitle')}
             </TextMuted>
             <PrimaryButton
                 onClick={handleClick}
                 type="button"
-                name='Подписаться'
-
+                name={t('footer.footer_news_button')}
             />
             {
                 modalOpen && <NewsLetterPopUp setOpenModal={setModalOpen}/>
