@@ -4,15 +4,15 @@ import Hamburger from './Hamburger'
 import {RedButton, RightMenu, NavigationsWrapper} from './Hamburger.elements'
 import {FaBars, FaTimes} from 'react-icons/fa'
 import Logo from '../../Logo'
-import {Menu} from './Hamburger.elements'
-import Search from '../../SearchBar/Search'
-import { LanguageBar } from '../../Language'
-import Phone from '../../Phone'
+//import {Menu} from './Hamburger.elements'
+import HeaderMenu from './HeaderMenu'
+import Search from './Search'
+import { LanguageBar } from './Language'
+import Phone from './Phone'
 import {useSelector} from 'react-redux'
 import {selectRoutes} from '../../../features/routeSlice'
-import { useTranslation } from 'react-i18next'
 
-const Header = ({label, path, history}) => {
+const Header = ({history}) => {
     // State of Menu
     const [state, setState] = useState({
         initial: false,
@@ -67,25 +67,12 @@ const Header = ({label, path, history}) => {
         }, 1200)
     }
 
-    const { t } = useTranslation()
-
     const routesNavi = useSelector(selectRoutes)
 
     return (
         <NavigationsWrapper>
             <Logo/>
-            <Menu>
-                <nav>
-                    <NavLink to='/'>
-                        {t('nav_home')}
-                    </NavLink>
-                </nav>
-                {routesNavi.map((l) => (
-                    <nav key={l.label}>
-                        <NavLink exact to={l.path}>{t(l.label)}</NavLink>
-                    </nav>
-                ))}
-            </Menu>
+            <HeaderMenu/>
             <RightMenu>
                 <Search/>
                 <LanguageBar/>

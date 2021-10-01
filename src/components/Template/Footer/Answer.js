@@ -6,6 +6,7 @@ import * as yup from 'yup'
 import {yupResolver} from '@hookform/resolvers/yup'
 import {Input} from './Input'
 import { useClickOutside } from '../../../utils/ClickOutside'
+import { PrimaryButton } from '../../Buttons/MainButton'
 
 //https://github.com/weibenfalk/react-controlled-form/blob/master/src/App.js
 
@@ -43,6 +44,7 @@ const PopupWindow = styled.div`
   -webkit-backdrop-filter: blur(4px);
   border-radius: 10px;
   border: 1px solid rgba( 255, 255, 255, 0.18 );
+  z-index: 1;
 `
 
 const PopupContent = styled.div`
@@ -101,9 +103,10 @@ const Text = styled.h2`
 `
 
 const StyledForm = styled.form`
+  display: grid;
   justify-content: center;
   align-items: center;
-  position: relative;
+  //position: relative;
 `
 
 const FormGroup = styled.div`
@@ -129,7 +132,7 @@ const StyledSpan = styled.span`
   color: red;
 `
 
-const AnswerButton = styled.button`
+/*const AnswerButton = styled.button`
       display: grid;
       width: 100%;
       color: white;
@@ -145,7 +148,7 @@ const AnswerButton = styled.button`
     &:focus {
       box-shadow: none;
     }
-`
+`*/
 
 const Answer = ({setOpenModal, ref}) => {
 
@@ -262,7 +265,7 @@ const Answer = ({setOpenModal, ref}) => {
                             <StyledSpan>Поле ТЕЛЕФОН должно быть заполнено</StyledSpan>}
 
                         </FormGroup>
-                        <AnswerButton type="submit">Отправить</AnswerButton>
+                        <PrimaryButton margin='0' type="submit" name='Подписаться'>Подписаться</PrimaryButton>
                     </StyledForm>
                 </ContentText>
             </PopupContent>

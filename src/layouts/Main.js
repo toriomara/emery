@@ -8,6 +8,7 @@ import { PrimaryButton, SecondaryButton } from '../components/Buttons/MainButton
 import { auth } from '../components/firebase'
 import { logout } from '../features/userSlice'
 import { useDispatch } from 'react-redux'
+import { useTranslation } from 'react-i18next'
 
 const Wrapper = styled.div`
   display: grid;
@@ -24,6 +25,8 @@ const ButtonBlock = styled.div`
 `
 
 const Main = ({ children }) => {
+	const { t } = useTranslation()
+
 	const dispatch = useDispatch()
 	const history = useHistory()
 
@@ -53,9 +56,9 @@ const Main = ({ children }) => {
                 <DarkButton margin='10px 10px 10px 0' name='Выход' onClick={logoutOfApp}/>
                 <DarkButton margin='10px 10px 10px 0' name='Аккаунт' onClick={account}/>*/}
 
-				<SecondaryButton name='Главная' onClick={handleClick}/>
-				<PrimaryButton name='Выход' onClick={logoutOfApp}/>
-				<PrimaryButton name='Аккаунт' onClick={account}/>
+				<SecondaryButton name={t('btn.temp_main')} onClick={handleClick}/>
+				<PrimaryButton name={t('btn.temp_signOut')} onClick={logoutOfApp}/>
+				<PrimaryButton name={t('btn.temp_account')} onClick={account}/>
 			</ButtonBlock>
 			<div id='main'>
 				{children}

@@ -1,6 +1,21 @@
 {
-  "app_title": "عنوان",
-  "language": "اللغة",
-  "welcome_message": "اهلا بكم",
-  "days_since_release": "لقد مرت {{number_of_days}} أيام على إصدار هذا الفيديو"
+  "exp": {
+    "app_title": "عنوان",
+    "language": "اللغة",
+    "welcome_message": "اهلا بكم",
+    "days_since_release": "لقد مرت {{number_of_days}} أيام على إصدار هذا الفيديو"
+  },
+  "main_menu": {
+    "nav_home": "الصفحة الرئيسية",
+    "nav_production": "الإنتاج",
+    "nav_documentation": "توثيق",
+    "nav_distribution": "توزيع",
+    "nav_news": "الإخبارية",
+    "nav_contacts": "جهات الاتصال"
+  },
+  "footer": {
+    "footer_news_title": "ما هو الجديد؟",
+    "footer_news_subtitle": "اشترك في النشرة الإخبارية لدينا واحصل على أحدث العروض!",
+    "footer_news_button": "الاشتراك في"
+  }
 }

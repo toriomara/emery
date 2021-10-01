@@ -8,6 +8,7 @@ const StyledPhone = styled.div`
   align-items: center;
   margin: 0 10px 0 0;
   font-family: inherit;
+  font-size: 18px;
   
   a {
     text-decoration: none;
@@ -21,10 +22,18 @@ const StyledPhone = styled.div`
   }
   
    @media screen and (max-width: 1550px) {
-     font-size: 18px; 
-      
+     font-size: 16px; 
+   }
+
    @media screen and (max-width: 1501px) {
      font-size: 17px;
+   }
+         
+   @media screen and (max-width: 1300px) {
+      gap: 25px;
+      font-size: 16px;
+   }
+   
 `
 
 const Phone = () => {

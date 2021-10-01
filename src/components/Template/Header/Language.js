@@ -2,10 +2,10 @@ import React, { useState } from 'react'
 import styled from 'styled-components'
 import { MdArrowDropDown, MdLanguage } from 'react-icons/md'
 import i18next from 'i18next'
-import { languages } from '../i18n'
+import { languages } from '../../../i18n'
 import cookies from 'jscookie'
 import { useTranslation } from 'react-i18next'
-import { useClickOutside } from '../utils/ClickOutside'
+import { useClickOutside } from '../../../utils/ClickOutside'
 
 //https://github.com/fireship-io/229-multi-level-dropdown
 //https://github.com/hidjou/classsed-react-localization
@@ -24,20 +24,23 @@ const LanguageButton = styled.button`
 	position: relative;
   display: inline-flex;
   align-items: center;
-  gap: 3px;
+  gap: 1px;
   appearance: none;
-  padding: 8px 16px 10px 16px;
+  margin: 8px 16px 10px 16px;
   color: var(--dark);
   font-family: inherit;
   text-transform: uppercase;
   letter-spacing: 1px;
   line-height: 1.5;
-  font-weight: 400;
-  font-size: 18px;
+  font-weight: 500;
+  font-size: 17px;
   background-color: transparent;
-  border: 1px solid var(--dark);
   border-radius: 5px;
   transition: all 0.3s ease 0s;
+  
+  div {
+    width: 25px;
+  }
   
   &:hover {
     opacity: 0.7;
@@ -47,6 +50,14 @@ const LanguageButton = styled.button`
   &:focus {
     outline: none;
   }
+  
+  @media screen and (max-width: 1380px) {
+    font-size: 16px;
+  }
+  
+  @media screen and (max-width: 1250px) {
+    font-size: 15px;
+  } 
 `
 
 const Menu = styled.ul`
@@ -115,7 +126,7 @@ export const LanguageBar = () => {
 			{open && (
 				<Menu ref={domNode}>
 					<SetLang>
-						<span className="dropdown-item-text">{t('language')}</span>
+						<span className="dropdown-item-text">{t('exp.language')}</span>
 					</SetLang>
 					{languages.map(({ code, name, countryCode }) =>
 						<MenuItem

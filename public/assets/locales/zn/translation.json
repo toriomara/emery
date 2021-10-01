@@ -1,6 +1,21 @@
 {
-  "app_title": "标题",
-  "language": "语",
-  "welcome_message": "欢迎",
-  "days_since_release": "此应用发布已过去 {{number_of_days}} 天"
+  "exp": {
+    "app_title": "标题",
+    "language": "语",
+    "welcome_message": "欢迎",
+    "days_since_release": "此应用发布已过去 {{number_of_days}} 天"
+  },
+  "main_menu": {
+    "nav_home": "家",
+    "nav_production": "产品与服务",
+    "nav_documentation": "文档",
+    "nav_distribution": "分配",
+    "nav_news": "消息",
+    "nav_contacts": "联系人"
+  },
+  "footer": {
+    "footer_news_title": "什么是新的？",
+    "footer_news_subtitle": "订阅我们的时事通讯并接收最新优惠！",
+    "footer_news_button": "订阅"
+  }
 }

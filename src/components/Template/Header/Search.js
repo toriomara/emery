@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 import { FaTimes, FaSearch } from 'react-icons/fa'
-import { Input } from '../Template/Footer/Input'
+import { Input } from '../Footer/Input'
 
 const SearchContainer = styled.div`
 	position: relative;

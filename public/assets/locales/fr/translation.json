@@ -1,6 +1,21 @@
 {
-  "app_title": "Titre",
-  "language": "Langue",
-  "welcome_message": "Bienvenue",
-  "days_since_release": "ça fait {{number_of_days}} jours depuis la sortie de cette vidéo"
+  "exp": {
+    "app_title": "Titre",
+    "language": "Langue",
+    "welcome_message": "Bienvenue",
+    "days_since_release": "ça fait {{number_of_days}} jours depuis la sortie de cette vidéo"
+  },
+  "main_menu": {
+    "nav_home": "Accueil",
+    "nav_production": "Production",
+    "nav_documentation": "Documentation",
+    "nav_distribution": "Distribution",
+    "nav_news": "Nouvelles",
+    "nav_contacts": "Contacts"
+  },
+  "footer": {
+    "footer_news_title": "Quoi de neuf?",
+    "footer_news_subtitle": "Abonnez-vous à notre newsletter et recevez les offres les plus fraîches!",
+    "footer_news_button": "S'abonner à"
+  }
 }
