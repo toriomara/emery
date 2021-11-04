@@ -32,7 +32,7 @@ export const languages = [
 		countryCode: 'de'
 	},
 	{
-		code: 'zn',
+		code: 'zh',
 		name: '中國人',
 		countryCode: 'cn'
 	}
@@ -43,7 +43,7 @@ i18n
 	.use(LanguageDetector)
 	.use(HttpApi)
 	.init({
-		supportedLngs: ['ru', 'en', 'fr', 'ar', 'de', 'zn'],
+		supportedLngs: ['ru', 'en', 'fr', 'ar', 'de', 'zh'],
 		fallbackLng: 'ru',
 		debug: 'true',
 		detection: {

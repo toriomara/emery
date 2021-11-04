@@ -124,8 +124,6 @@ const productSlice = createSlice({
     reducers: {}
 })
 
-// 
-
 export const selectProduct = state => state.product.products
 
 export default productSlice.reducer

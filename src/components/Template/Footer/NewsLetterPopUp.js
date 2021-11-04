@@ -4,6 +4,7 @@ import { FaTimes } from 'react-icons/fa'
 import img from '../../../img/email.web'
 import { Input } from './Input'
 import { PrimaryButton } from '../../Buttons/MainButton'
+import { useClickOutside } from '../../../utils/useClickOutside'
 
 const SharedStyles = css`
   background-color: #fff;
@@ -156,11 +157,13 @@ const StyledError = styled.div`
 `
 
 const initialState = {
-	Имя: '',
-	Email: '',
+	name: '',
+	email: '',
 }
 
-const NewsLetterPopUp = ({ setOpenModal }) => {
+const NewsLetterPopUp = React.forwardRef(( props, ref ) => {
+
+	const { setIsOpen, isOpen } = props
 
 	const [state, setState] = useState(initialState)
 	const [error, setError] = useState('')
@@ -190,13 +193,13 @@ const NewsLetterPopUp = ({ setOpenModal }) => {
 	}
 
 	return (
-		<PopupWindow>
+		<PopupWindow ref={ref}>
 			<PopupContent>
 				<Icon>
 					<FaTimes
 						name='Close'
 						onClick={() => {
-							setOpenModal(!setOpenModal)
+							setIsOpen(!setIsOpen)
 						}}/>
 				</Icon>
 				<Title>Хотите получать новости?</Title>
@@ -240,6 +243,6 @@ const NewsLetterPopUp = ({ setOpenModal }) => {
 			</PopupContent>
 		</PopupWindow>
 	)
-}
+})
 
 export default NewsLetterPopUp

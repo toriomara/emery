@@ -16,7 +16,6 @@ const StyledMenu = styled.div`
   justify-content: end;
   
   nav {
-  
       a {
         position: relative;
         letter-spacing: 1px;

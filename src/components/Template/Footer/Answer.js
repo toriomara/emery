@@ -5,7 +5,7 @@ import {useForm} from 'react-hook-form'
 import * as yup from 'yup'
 import {yupResolver} from '@hookform/resolvers/yup'
 import {Input} from './Input'
-import { useClickOutside } from '../../../utils/ClickOutside'
+import { useClickOutside } from '../../../utils/useClickOutside'
 import { PrimaryButton } from '../../Buttons/MainButton'
 
 //https://github.com/weibenfalk/react-controlled-form/blob/master/src/App.js

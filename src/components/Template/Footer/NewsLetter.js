@@ -1,8 +1,9 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 import NewsLetterPopUp from './NewsLetterPopUp'
-import {PrimaryButton} from '../../Buttons/MainButton'
+import { PrimaryButton } from '../../Buttons/MainButton'
 import { useTranslation } from 'react-i18next'
+import { useClickOutside } from '../../../utils/useClickOutside'
 
 const NewsletterContainer = styled.div`
   display: grid;
@@ -22,29 +23,32 @@ const NewsletterTitle = styled.h5`
   justify-self: center;
 `
 
-const NewsLetter = () => {
-  const { t } = useTranslation()
+const NewsLetter = React.forwardRef(( props, ref ) => {
+	const { t } = useTranslation()
 
+	const [isOpen, setIsOpen] = useState(false)
+	const handleClick = () => {setIsOpen(!isOpen)}
 
-  const [modalOpen, setModalOpen] = useState(false)
-    const handleClick = () => {setModalOpen(!modalOpen)}
+	const news = useClickOutside(() => {
+		setIsOpen(false)
+	})
 
-    return (
-        <NewsletterContainer>
-            <NewsletterTitle>{t('footer.footer_news_title')}</NewsletterTitle>
-            <TextMuted>
-              {t('footer.footer_news_subtitle')}
-            </TextMuted>
-            <PrimaryButton
-                onClick={handleClick}
-                type="button"
-                name={t('footer.footer_news_button')}
-            />
-            {
-                modalOpen && <NewsLetterPopUp setOpenModal={setModalOpen}/>
-            }
-        </NewsletterContainer>
-    )
-}
+	return (
+		<NewsletterContainer>
+			<NewsletterTitle>{t('footer.footer_news_title')}</NewsletterTitle>
+			<TextMuted>
+				{t('footer.footer_news_subtitle')}
+			</TextMuted>
+			<PrimaryButton
+				onClick={handleClick}
+				type="button"
+				name={t('footer.footer_news_button')}
+			/>
+			{
+				isOpen && <NewsLetterPopUp forwarderRef={news} setIsOpen={setIsOpen}/>
+			}
+		</NewsletterContainer>
+	)
+})
 
 export default NewsLetter

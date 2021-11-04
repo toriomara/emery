@@ -1,14 +1,14 @@
-import React, {useEffect, useRef, useState} from 'react'
-import {Link} from 'react-router-dom'
-import {useSelector} from 'react-redux'
+import React, { useEffect, useRef, useState } from 'react'
+import { Link } from 'react-router-dom'
+import { useSelector } from 'react-redux'
 import styled from 'styled-components'
-import {Power3, TweenLite, TweenMax} from 'gsap'
-import {selectProduct} from '../../features/productSlice'
-import {PrimaryButton} from '../Buttons/MainButton'
+import { Power3, TweenLite, TweenMax } from 'gsap'
+import { selectProduct } from '../../features/productSlice'
+import { PrimaryButton } from '../Buttons/MainButton'
+import { useTranslation } from 'react-i18next'
 
 //import Preloader from '../components/preloader'
 // https://github.com/wrongakram/GSAP-Hero-Animation/blob/master/src/App.js
-
 
 const Container = styled.section`
   display: grid;
@@ -63,62 +63,67 @@ const Image = styled.img`
 
 const Text = styled.div`
   position: relative;
+  a {
+    color: var(--dark);
+  }
 `
 
 const Title = styled.h2`
   margin-top: 20px;
+  
 `
 
 const Desc = styled.p`
   margin-top: 20px;
 `
 
-const ProductCard = ({product}) => {
+const ProductCard = ({ product }) => {
 
-    let productItem = useRef(null)
+	let productItem = useRef(null)
 
-    useEffect(() => {
-        TweenMax.from(productItem, 2, {opacity: 0, y: 100, ease: Power3.easeOut})
-    }, [product])
+	const { t } = useTranslation()
 
-    return (
-        <Card ref={el => {
-            productItem = el
-        }}>
-            <Product>
-                <Link to={product.link}>
-                    <Image src={product.image} alt={product.name}/>
-                </Link>
-                <Text>
-                    <Link to={`/production/${product.nameEn}`}>
-                        <Title>{product.name}</Title>
-                    </Link>
-                    <Desc>{product.desc}</Desc>
-                </Text>
-            </Product>
-            <Link to={product.link}>
-                <PrimaryButton
-                    name={product.name}
-                    margin='30px 0 15px'
-                />
-            </Link>
-        </Card>
-    )
+	useEffect(() => {
+		TweenMax.from(productItem, 2, { opacity: 0, y: 100, ease: Power3.easeOut })
+	}, [product])
+
+	return (
+		<Card ref={el => {
+			productItem = el
+		}}>
+			<Product>
+				<Link to={product.link}>
+					<Image src={product.image} alt={product.name}/>
+				</Link>
+				<Text>
+					<Link to={`/production/${product.nameEn}`}>
+						<Title>{product.name}</Title>
+					</Link>
+					<Desc>{product.desc}</Desc>
+				</Text>
+			</Product>
+			<PrimaryButton
+				name={product.name}
+				margin='30px 0 15px'
+			/>
+			<p>{t('products.name')}</p>
+		</Card>
+	)
 }
 
 const ItemList = () => {
 
-    const product = useSelector(selectProduct)
+	const product = useSelector(selectProduct)
 
-    const items = product.map((l, id) => (
-        <ProductCard product={l} key={l.nameEn}/>
-    ))
+	const items = product.map((l, id) => (
+		<ProductCard product={l} key={l.nameEn}/>
+	))
 
-    return (
-        <Container>
-            {items}
-        </Container>
-    )
+	return (
+		<Container>
+			{items}
+		</Container>
+	)
 }
 
 export default ItemList

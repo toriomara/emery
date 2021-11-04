@@ -5,7 +5,7 @@ import i18next from 'i18next'
 import { languages } from '../../../i18n'
 import cookies from 'jscookie'
 import { useTranslation } from 'react-i18next'
-import { useClickOutside } from '../../../utils/ClickOutside'
+import { useClickOutside } from '../../../utils/useClickOutside'
 
 //https://github.com/fireship-io/229-multi-level-dropdown
 //https://github.com/hidjou/classsed-react-localization
@@ -32,7 +32,7 @@ const LanguageButton = styled.button`
   text-transform: uppercase;
   letter-spacing: 1px;
   line-height: 1.5;
-  font-weight: 500;
+  font-weight: 400;
   font-size: 17px;
   background-color: transparent;
   border-radius: 5px;
@@ -112,7 +112,7 @@ export const LanguageBar = () => {
 	const [open, setOpen] = useState(false)
 	const handleClick = () => {setOpen(!open)}
 
-	const domNode = useClickOutside(() => {
+	const menu = useClickOutside(() => {
 		setOpen(false)
 	})
 
@@ -124,7 +124,7 @@ export const LanguageBar = () => {
 				<MdArrowDropDown/>
 			</LanguageButton>
 			{open && (
-				<Menu ref={domNode}>
+				<Menu ref={menu}>
 					<SetLang>
 						<span className="dropdown-item-text">{t('exp.language')}</span>
 					</SetLang>

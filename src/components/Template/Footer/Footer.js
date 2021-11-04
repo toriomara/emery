@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 import NewsLetter from './NewsLetter'
 import Answer from './Answer'
 import { OutlinedButton } from '../../Buttons/MainButton'
-import { useClickOutside } from '../../../utils/ClickOutside'
+import { useClickOutside } from '../../../utils/useClickOutside'
 //import {DataProvider} from './DataContext'
 
 import {AiOutlineMail} from 'react-icons/ai'
@@ -65,9 +65,7 @@ export const ItemContent = styled.ul`
   display: grid;
   
   & Link {
-    line-height: 1.4;
-    text-decoration: none;
-    color: var(--dark);
+    //line-height: 1.4;
   }
 `
 
@@ -104,7 +102,7 @@ const Footer = () => {
 						Компания
 					</ItemTitle>
 					<ItemContent>
-						<Link to='/about'>О нас</Link>
+						<Link to='/'>О нас</Link>
 						<Link to='/about'>Для прессы</Link>
 						<Link to='/about'>Новости</Link>
 						<Link to='/about'>Дилерам</Link>

@@ -6,6 +6,8 @@ import { useTranslation } from 'react-i18next'
 import cookies from 'jscookie'
 import { languages } from '../i18n'
 
+import ItemList from '../components/ItemList/ItemList'
+
 const TemporaryBlock = styled.div`
   position: relative;
   justify-content: center;
@@ -105,6 +107,7 @@ const Index = () => {
 				</Colors>
 			</TemporaryBlock>
 
+			<ItemList/>
 		</Main>
 	)
 }
